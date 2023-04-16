@@ -7,9 +7,9 @@ import Link from "next/link";
 
 const Header = () => {
   return (
-    <header className=" fixed w-full border-b-[2px] h-[5rem] md:h-[6rem] shadow-heade-shadow bg-white">
+    <header className="fixed w-full border-b[2px] h-[5rem] md:h-[6rem] shadow-header-shadow bg-[#dfe8ec] z-20">
       <div className="flex justify-between items-center h-full px-6 md:px-[5rem]">
-        <div>
+        <div className="">
           <Image
             className="translate-x-[-3rem]"
             src={logo}
@@ -19,7 +19,7 @@ const Header = () => {
           />
         </div>
         <div>
-          <div className="hidden md:flex gap-[2.5rem] items-center font-[300] uppercase tracking-wider">
+          <div className="hidden md:flex gap-[2.5rem] items-center font-[300] uppercase tracking-wider text-[0.95rem]">
             <Link className="link-with-underline" href={"/"}>
               Home
               <div className="absolute duration-200 bottom-[-8px]"></div>
@@ -31,10 +31,10 @@ const Header = () => {
               Services
             </Link>
             <Link href={"/"}>
-              <div className="bg-black text-white py-3 px-6 flex gap-3 rounded-full cursor-pointer">
+              <div className="bg-black text-white py-3 px-6 flex gap-3 rounded-full cursor-pointer group">
                 Contact
                 <Image
-                  className="bg-white rounded-full p-[2px]"
+                  className="bg-white rounded-full p-[4px] group-hover:rotate-45 duration-300"
                   src={arrow}
                   width={23}
                   height={20}

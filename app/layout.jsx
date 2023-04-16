@@ -15,7 +15,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${alata.className} `}>
+      <body className={`${alata.className} bg-[#dfe8ec] `}>
         <Header />
         <main>{children}</main>
       </body>
