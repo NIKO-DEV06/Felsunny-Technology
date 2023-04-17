@@ -10,9 +10,11 @@ import MobileNav from "./MobileNav";
 
 const Header = () => {
   const [isNav, setIsNav] = useState(false);
-
-  const toggleNav = () => {
-    setIsNav(!isNav);
+  const openNav = () => {
+    setIsNav(true);
+  };
+  const closeNav = () => {
+    setIsNav(false);
   };
   return (
     <Fragment>
@@ -53,12 +55,12 @@ const Header = () => {
               </Link>
             </div>
           </div>
-          <div onClick={toggleNav} className="md:hidden flex items-center">
+          <div onClick={openNav} className="md:hidden flex items-center">
             <Image src={menu} alt="Menu" width={35} height={35} />
           </div>
         </div>
       </header>
-      {isNav && <MobileNav onToggle={toggleNav} />}
+      {isNav && <MobileNav onClose={closeNav} />}
     </Fragment>
   );
 };
