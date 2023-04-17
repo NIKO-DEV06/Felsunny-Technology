@@ -8,7 +8,7 @@ module.exports = {
   theme: {
     extend: {
       boxShadow: {
-        "input-shadow": "0 1px 15px 1px rgba(0, 0, 0, 0.1)",
+        "input-shadow": "0 1px 15px 1px rgba(0, 0, 0, 0.35)",
         "header-shadow": "0 2px 8px 0px rgba(0, 0, 0, 0.1)",
       },
       backgroundImage: {

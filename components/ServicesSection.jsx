@@ -1,0 +1,88 @@
+import { Fragment } from "react";
+import Image from "next/image";
+
+import dis from "../images/dis.webp";
+import construction from "../images/construction.jpeg";
+import gs from "../images/gs.jpeg";
+import consult from "../images/consult.jpeg";
+import ps from "../images/house.jpeg";
+import arrow from "../images/arrowWhite.svg";
+
+const services = [
+  {
+    title: " ---- Sales & Distribution ----",
+    image: dis,
+    desc: "Boost Your Sales and Expand Your Reach with Our Efficient Distribution Solutions.",
+  },
+  {
+    title: " ---- Government Supplies ----",
+    image: gs,
+    desc: "Delivering quality products and services to meet the needs of our nation's leaders.",
+  },
+  {
+    title: " ---- Construction ----",
+    image: construction,
+    desc: "Building your vision with quality craftsmanship and attention to detail.",
+  },
+  {
+    title: " ---- Property Sales ----",
+    image: ps,
+    desc: "Find your dream home with our comprehensive property listings and personalized service.",
+  },
+  {
+    title: " ---- Consultancy Services ----",
+    image: consult,
+    desc: " Unlocking your company's potential with expert guidance and innovative solutions.",
+  },
+];
+
+const ServicesSection = () => {
+  return (
+    <Fragment>
+      <div className=" translate-y-[-5rem] pt-[5rem]">
+        <p className="text-center lg:pt-[10rem] pt-[5rem] uppercase tracking-widest">
+          ~services~
+        </p>
+        <h1 className="text-center text-[1.5rem] px-[4rem] font-bold mt-[1rem] lg:text-[2rem] lg:w-[30rem] lg:mx-auto lg:pb-[2rem] xl:text-[2.5rem] xl:w-[35rem]">
+          What you can expect from us
+        </h1>
+        <div className="flex flex-col md:flex-row md:justify-center md:flex-wrap gap-[2rem] lg:gap-[3rem] xl:gap-[4rem] items-center mt-[1.2rem] ">
+          {services.map((service) => (
+            <div className="relative p-2 lg:p-0 rounded-[1rem]">
+              <h1 className=" z-10 font-[500] text-[1.1rem] p-2 bg[#1e1e1e] rounded-md lg:text-[1.2rem] lg:font-[400]">
+                {service.title}
+              </h1>
+
+              <div className="relative group cursor-pointer">
+                <p className="absolute p-2 bg-[#1e1e1e] text-white rounded-md bottom-0 group-hover:bottom-[1rem] left-1/2 transform -translate-x-1/2 w-[90%] text-[0.91rem] z-40 duration-200 opacity-0 group-hover:opacity-100 xl:text-[1.1rem]">
+                  {service.desc}
+                </p>
+                <div className="absolute group-hover:opacity-[0.75] bg-[#223434] opacity-0 inset-0 z-30 rounded-[1rem] duration-200 "></div>
+                <p className="z-40 flex uppercase absolute left-1/2 transform -translate-x-1/2 top-[40%] text-[1.2rem] tracking-wider text-white opacity-0 group-hover:opacity-100 duration-200">
+                  see more{" "}
+                  <span className="">
+                    <Image
+                      src={arrow}
+                      width={20}
+                      height={20}
+                      className="translate-y-1 "
+                    />
+                  </span>
+                </p>
+
+                <Image
+                  src={service.image}
+                  width={300}
+                  height={300}
+                  className="relative h-[17rem] lg:h-[20rem] lg:w-[25rem] xl:h-[23rem] xl:w-[28rem] rounded-[1rem] duration-200 shadow-input-shadow"
+                />
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </Fragment>
+  );
+};
+
+export default ServicesSection;

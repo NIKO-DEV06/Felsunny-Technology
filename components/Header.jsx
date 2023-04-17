@@ -1,5 +1,6 @@
 import Image from "next/image";
 import logo from "../images/logo.svg";
+
 import menu from "../images/menu.svg";
 import arrow from "../images/arrow.svg";
 
@@ -22,7 +23,6 @@ const Header = () => {
           <div className="hidden md:flex gap-[2.5rem] items-center font-[300] uppercase tracking-wider text-[0.95rem]">
             <Link className="link-with-underline" href={"/"}>
               Home
-              <div className="absolute duration-200 bottom-[-8px]"></div>
             </Link>
             <Link className="link-with-underline" href={"/"}>
               About

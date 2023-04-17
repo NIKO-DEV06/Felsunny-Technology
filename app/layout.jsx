@@ -1,6 +1,7 @@
 import "./globals.css";
 import { Jost } from "next/font/google";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 const alata = Jost({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800"],
@@ -18,6 +19,7 @@ export default function RootLayout({ children }) {
       <body className={`${alata.className} bg-[#dfe8ec] `}>
         <Header />
         <main>{children}</main>
+        <Footer />
       </body>
     </html>
   );
