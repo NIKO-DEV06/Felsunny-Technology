@@ -1,4 +1,6 @@
 import Image from "next/image";
+import Link from "next/link";
+
 import businessSvg from "../images/business.svg";
 import blob from "../images/blob.svg";
 
@@ -6,21 +8,22 @@ const HomeSection = () => {
   return (
     <div className="">
       <div className="lg:flex w-full gap-[10rem] xl:gap-[18rem]">
-        <h1 className="text-[1.8rem] md:text-[2.5rem] lg:text-[3.2rem] lg:leading-[5rem] pt-[10rem] md:pt-[10rem] lg:pt-[10rem] font-bold text-center px-6 lg:text-left lg:w-[50%] lg:translate-y-[-2rem]">
+        <h1 className="text-[1.8rem] md:text-[2.5rem] lg:text-[3.2rem] lg:leading-[5rem] pt-[10rem] font-bold text-center px-6 lg:text-left lg:w-[50%] lg:translate-y-[-2rem]">
           Streamline your business operations with our services
         </h1>
 
         <Image
           src={businessSvg}
-          alt="Home Page SVG"
+          alt="Home page SVG"
           width={250}
           height={250}
-          className="mx-auto lg:mx-0 mt-[1rem] lg:scale-[1.5] "
+          className="mx-auto lg:mx-0 mt-[1rem] lg:scale-[1.5]"
+          priority
         />
 
         <Image
           src={blob}
-          alt="Home Page SVG"
+          alt="blob SVG"
           width={300}
           height={300}
           className="absolute -z-20 left-1/2 transform -translate-x-1/2 translate-y-[-12rem] lg:hidden"
@@ -36,9 +39,11 @@ const HomeSection = () => {
             government supplies, construction, consultancy services, and
             property sales. Contact us today to learn more.
           </p>
-          <div className="text-white bg-black mx-auto text-center w-[8.5rem] py-3 rounded-md mt-[2rem] cursor-pointer lg:mx-0 lg:ml-[1.2rem] hover:bg-[#b3bdc2] hover:text-black duration-200 md:text-[0.95rem]">
-            LEARN MORE
-          </div>
+          <Link href={"/about"}>
+            <div className="text-white bg-black mx-auto text-center w-[8.5rem] py-3 rounded-md mt-[2rem] cursor-pointer lg:mx-0 lg:ml-[1.2rem] hover:bg-[#b3bdc2] hover:text-black duration-200 md:text-[0.95rem]">
+              LEARN MORE
+            </div>
+          </Link>
         </div>
       </div>
     </div>

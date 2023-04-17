@@ -21,9 +21,11 @@ const Footer = () => {
               let us help you achieve your goals.
             </p>
           </div>
-          <div className="text-white bg-black mx-auto text-center w-[8.5rem] py-3 rounded-md mt-[2rem] cursor-pointer lg:mx-0 lg:ml-[1.2rem] hover:bg-[#b3bdc2] hover:text-black duration-200 md:text-[0.95rem] mb-[1rem] lg:mb-[10rem] lg:translate-y-[5rem] lg:items-center lg:scale-[1.1]">
-            GET IN TOUCH
-          </div>
+          <Link href={"/contact"}>
+            <div className="text-white bg-black mx-auto text-center w-[8.5rem] py-3 rounded-md mt-[2rem] cursor-pointer lg:mx-0 lg:ml-[1.2rem] hover:bg-[#b3bdc2] hover:text-black duration-200 md:text-[0.95rem] mb-[1rem] lg:mb-[10rem] lg:translate-y-[5rem] lg:items-center lg:scale-[1.1]">
+              GET IN TOUCH
+            </div>
+          </Link>
         </div>
       </aside>
       <div className="translate-y-[-8rem] md:translate-y-[-5rem] lg:flex lg:flex-col lg:items-center">
@@ -34,16 +36,17 @@ const Footer = () => {
             alt="Felsunny Logo"
             width={270}
             height={270}
+            priority
           />
           <hr className="lg:hidden border-[#6b686e] w-[85%] mx-auto py-[1rem] mt-[1rem]" />
           <div className="flex flex-col lg:flex-row gap-[1.2rem] lg:gap-[1.5rem] items-center font-[400] uppercase tracking-widest text-[0.95rem]">
-            <Link className="hover:opacity-50 duration-300" href={"/"}>
+            <Link className="hover:opacity-50 duration-300" href={"/about"}>
               About
             </Link>
-            <Link className="hover:opacity-50 duration-300" href={"/"}>
+            <Link className="hover:opacity-50 duration-300" href={"/services"}>
               Services
             </Link>
-            <Link className="hover:opacity-50 duration-300" href={"/"}>
+            <Link className="hover:opacity-50 duration-300" href={"/contact"}>
               Contact
             </Link>
           </div>
@@ -58,8 +61,9 @@ const Footer = () => {
           </div>
           <div className="lg:translate-y-[3rem]">
             <div className="flex justify-center lg:justify-end gap-[1.5rem]">
-              <Link href={"/"}>
+              <Link href={"https://mobile.twitter.com/felsunny"}>
                 <Image
+                  alt="twitter"
                   src={twitter}
                   width={25}
                   height={25}
@@ -68,6 +72,7 @@ const Footer = () => {
               </Link>
               <Link href={"/"}>
                 <Image
+                  alt="linkedin"
                   src={linkedin}
                   width={25}
                   height={25}
@@ -76,6 +81,7 @@ const Footer = () => {
               </Link>
               <Link href={"/"}>
                 <Image
+                  alt="facebook"
                   src={facebook}
                   width={25}
                   height={25}
@@ -84,6 +90,7 @@ const Footer = () => {
               </Link>
               <Link href={"/"}>
                 <Image
+                  alt="instagram"
                   src={instagram}
                   width={25}
                   height={25}

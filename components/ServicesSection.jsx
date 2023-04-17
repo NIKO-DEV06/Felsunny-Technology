@@ -4,32 +4,45 @@ import Image from "next/image";
 import dis from "../images/dis.webp";
 import construction from "../images/construction.jpeg";
 import gs from "../images/gs.jpeg";
-import consult from "../images/consult.jpeg";
-import ps from "../images/house.jpeg";
+import consult from "../images/con.jpg";
+import ps from "../images/ps.jpg";
+import devices from "../images/devices.jpg";
+
 import arrow from "../images/arrowWhite.svg";
 
 const services = [
   {
+    id: "s1",
     title: " ---- Sales & Distribution ----",
     image: dis,
     desc: "Boost Your Sales and Expand Your Reach with Our Efficient Distribution Solutions.",
   },
   {
+    id: "s2",
     title: " ---- Government Supplies ----",
     image: gs,
     desc: "Delivering quality products and services to meet the needs of our nation's leaders.",
   },
   {
+    id: "s3",
     title: " ---- Construction ----",
     image: construction,
     desc: "Building your vision with quality craftsmanship and attention to detail.",
   },
   {
+    id: "s4",
     title: " ---- Property Sales ----",
     image: ps,
     desc: "Find your dream home with our comprehensive property listings and personalized service.",
   },
   {
+    id: "s5",
+    title: " ---- Gadgets & Devices ----",
+    image: devices,
+    desc: " Elevate your digital experience with our top-of-the-line devices and gadgets.",
+  },
+  {
+    id: "s6",
     title: " ---- Consultancy Services ----",
     image: consult,
     desc: " Unlocking your company's potential with expert guidance and innovative solutions.",
@@ -48,7 +61,10 @@ const ServicesSection = () => {
         </h1>
         <div className="flex flex-col md:flex-row md:justify-center md:flex-wrap gap-[2rem] lg:gap-[3rem] xl:gap-[4rem] items-center mt-[1.2rem] ">
           {services.map((service) => (
-            <div className="relative p-2 lg:p-0 rounded-[1rem]">
+            <div
+              key={service.id}
+              className="relative p-2 lg:p-0 rounded-[1rem]"
+            >
               <h1 className=" z-10 font-[500] text-[1.1rem] p-2 bg[#1e1e1e] rounded-md lg:text-[1.2rem] lg:font-[400]">
                 {service.title}
               </h1>
@@ -62,6 +78,7 @@ const ServicesSection = () => {
                   see more{" "}
                   <span className="">
                     <Image
+                      alt="arrow"
                       src={arrow}
                       width={20}
                       height={20}
@@ -71,6 +88,7 @@ const ServicesSection = () => {
                 </p>
 
                 <Image
+                  alt={service.title}
                   src={service.image}
                   width={300}
                   height={300}
