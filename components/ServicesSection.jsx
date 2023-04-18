@@ -52,7 +52,7 @@ const services = [
 const ServicesSection = () => {
   return (
     <Fragment>
-      <div className=" translate-y-[-5rem] pt-[5rem]">
+      <div className=" translate-y-[-5rem] pt-[5rem] pb-[7rem]">
         <p className="text-center lg:pt-[10rem] pt-[5rem] uppercase tracking-widest">
           ~services~
         </p>

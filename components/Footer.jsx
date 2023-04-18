@@ -1,5 +1,7 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 import logo from "../images/logoWhite.svg";
 import twitter from "../images/twitter.svg";
@@ -8,9 +10,15 @@ import facebook from "../images/facebook.svg";
 import linkedin from "../images/linkedin.svg";
 
 const Footer = () => {
+  const pathname = usePathname();
+
   return (
-    <footer className="bg-[#1c1b1d] text-white translate-y-[10rem] lg:h[95vh]">
-      <aside className="text-black bg-white mx-[1rem] md:mx-[5rem] lg:mx-[9rem] xl:mx-[10rem] lg:py-[3rem] rounded-[1rem] -translate-y-1/2">
+    <footer className="bg-[#1c1b1d] text-white pb-[2rem]">
+      <aside
+        className={`text-black bg-white mx-[1rem] md:mx-[5rem] lg:mx-[9rem] xl:mx-[10rem] lg:py-[3rem] rounded-[1rem] -translate-y-[40%] ${
+          pathname === "/contact" ? "hidden" : ""
+        }`}
+      >
         <div className="pb-[2rem] lg:flex lg:justify-center lg:gap-[5rem]">
           <div className="text-center">
             <h1 className="font-bold text-[1.5rem] mx-[1rem] pt-[3rem] pb-[1rem] lg:w-[25rem] lg:text-left lg:text-[1.7rem]">
@@ -28,7 +36,13 @@ const Footer = () => {
           </Link>
         </div>
       </aside>
-      <div className="translate-y-[-8rem] md:translate-y-[-5rem] lg:flex lg:flex-col lg:items-center">
+      <div
+        className={`${
+          pathname === "/contact"
+            ? "translate-y-[-2.5rem] lg:translate-y-[-2.5rem] pt-[3rem] lg:pt-[7rem]"
+            : "translate-y-[-8rem] md:translate-y-[-5rem]"
+        }  lg:flex lg:flex-col lg:items-center`}
+      >
         <div className="lg:flex lg:gap-[23rem] xl:gap-[32rem]">
           <Image
             className="h-[5rem] w-[17rem] object-left object-cover mx-auto lg:translate-x-[-3rem] lg:scale-[1.2]"

@@ -1,5 +1,6 @@
 import "./globals.css";
 import { Jost } from "next/font/google";
+
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -16,7 +17,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${alata.className} bg-[#dfe8ec] `}>
+      <body className={`${alata.className} bg-[#535155]`}>
         <Header />
         <main>{children}</main>
         <Footer />

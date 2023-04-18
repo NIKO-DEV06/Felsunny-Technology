@@ -49,7 +49,7 @@ const MobileNav = ({ onClose }) => {
       </div>
       <div
         onClick={onClose}
-        className="fixed bg-black inset-0 z-[49] opacity-30"
+        className="fixed md:hidden bg-black inset-0 z-[49] opacity-30"
       ></div>
     </Fragment>
   );
