@@ -22,7 +22,7 @@ const Header = () => {
   console.log(pathname);
   return (
     <Fragment>
-      <header className="fixed w-full border-b[2px] h-[5rem] md:h-[6rem] shadow-header-shadow bg-[#dfe8ec] z-20">
+      <header className="fixed w-full border-b-[0.5px] border-[#9a979c] h-[5rem] md:h-[6rem] shadowheader-shadow bg-[#dfe8ec] z-20">
         <div className="flex justify-between items-center h-full px-6 md:px-[5rem]">
           <Link href={"/"}>
             <Image

@@ -65,6 +65,7 @@ const Footer = () => {
             </Link>
           </div>
         </div>
+        <hr className="lg:border-[#6b686e] lg:w-[82%] lg:mx-auto lg:py-[1rem] lg:mt-[1rem] hidden lg:flex" />
         <div className="lg:flex lg:gap-[23rem] xl:gap-[32rem]">
           <div className="py-[2rem] mx-auto flex flex-col gap-[1rem] items-center lg:items-start text-[0.95rem] opacity-60">
             <p className="font-[600] text-[1.1rem]">

@@ -41,3 +41,10 @@
   background-color: #000000;
   transition: width 0.3s ease-in-out;
 }
+
+.inputs {
+  @apply outline-none border-[1px] focus:border-black indent-4 h-[2.5rem] w-[21rem] rounded-none appearance-none text-[0.95rem];
+}
+.select {
+  @apply outline-none indent-4 h-[2.5rem] w-[21rem] rounded-none appearance-none;
+}
