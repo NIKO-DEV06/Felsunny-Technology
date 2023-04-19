@@ -8,15 +8,20 @@ import send from "../images/send.svg";
 const Contact = () => {
   return (
     <main className="pt-[7.5rem] pb-[7rem] bg-[#dfe8ec]">
-      <h1 className="text-[1.7rem] text-center mx-auto w-[20rem] font-semibold lg:text-red-500 xl:text-green-500 md:text-blue-600">
-        Love to hear from you, Get in touch{" "}
-        <span className="animate-pulse">👋</span>
-      </h1>
-      <form className="pt-[1.5rem]">
-        <div className="flex flex-col gap-[1rem] ">
-          <div className="flex flex-col gap-[1rem] items-center">
+      <form className="pt-[1.5rem] flex flex-col items-center justify-start">
+        <div className="flex flex-col gap-[1rem] lg:gap-[1.5rem]">
+          <div className="flex flex-col items-center md:items-start">
+            <h1 className="text-[1.7rem] lg:text-[2.3rem] lg:w-[25rem] text-center md:text-left md:mx-0 mx-auto w-[20rem] font-semibold md:font-[500] mb-[1rem]">
+              Love to hear from you, Get in touch{" "}
+              <span className="animate-pulse">👋</span>
+            </h1>
+          </div>
+
+          <div className="flex flex-col md:flex-row gap-[1rem] items-start">
             <div className="flex flex-col gap-[0.4rem]">
-              <p className="font-[500] tracking-wider">Your Name</p>
+              <p className="font-[500] tracking-wider lg:text-[1.1rem]">
+                Your Name
+              </p>
               <input
                 placeholder="e.g. John Doe"
                 type="text"
@@ -26,7 +31,9 @@ const Contact = () => {
               />
             </div>
             <div className="flex flex-col gap-[0.4rem]">
-              <p className="font-[500] tracking-wider">Your Email</p>
+              <p className="font-[500] tracking-wider lg:text-[1.1rem]">
+                Your Email
+              </p>
               <input
                 placeholder="e.g. johndoe@gmail.com"
                 type="text"
@@ -36,21 +43,23 @@ const Contact = () => {
               />
             </div>
           </div>
-          <div className="flex flex-col items-center">
+          <div className="flex flex-col items-center md:items-start">
             <div className="relative flex flex-col gap-[0.4rem]">
               <Image
                 src={down}
                 width={15}
                 height={15}
                 alt="downSvg"
-                className="absolute right-[1.5rem] translate-y-[2.7rem]"
+                className="absolute right-[1.5rem] translate-y-[2.7rem] lg:translate-y-[3rem]"
               />
 
-              <p className="font-[500] tracking-wider">Select Service</p>
+              <p className="font-[500] tracking-wider lg:text-[1.1rem]">
+                Select Service
+              </p>
               <select
                 id="dropdown"
                 name="services"
-                className="select bg-white text-[0.95rem] font-[500] text-[#656161]"
+                className="select bg-white text-[0.95rem] lg:text-[1rem] font-[500] text-[#656161]"
               >
                 <option value="sales">Sales & Distribution</option>
                 <option value="supplies">Government Supplies</option>
@@ -61,25 +70,27 @@ const Contact = () => {
               </select>
             </div>
           </div>
-          <div className="flex flex-col items-center">
+          <div className="flex flex-col items-center md:items-start">
             <div className="flex flex-col gap-[0.4rem]">
-              <p className="font-[500] tracking-wider">Message</p>
+              <p className="font-[500] tracking-wider lg:text-[1.1rem]">
+                Message
+              </p>
               <textarea
                 name="message"
                 cols="30"
                 rows="10"
                 autoComplete="off"
                 placeholder="Let us know what your project is about"
-                className="outline-none border-[1px] focus:border-black h-[11rem] w-[21rem] rounded-none appearance-none resize-none px-4 py-3 text-[0.95rem] "
+                className="outline-none border-[1px] focus:border-black h-[11rem] w-[21rem] md:w-[43rem] lg:w-[55rem] rounded-none appearance-none resize-none px-4 py-3 text-[0.95rem] lg:text-[1rem] "
               />
             </div>
           </div>
-        </div>
-        <div className="relative flex justify-center items-center">
-          <button className="flex justify-center items-center gap-[0.5rem] bg-black text-white w-[21rem] p-[0.65rem] mt-[1rem] tracking-widest">
-            SEND
-            <Image src={send} width={20} height={20} alt="arrowSvg" />
-          </button>
+          <div className="flex flex-col items-center md:items-start">
+            <button className="flex justify-center items-center gap-[0.5rem] bg-black text-white w-[21rem] lg:w-[27rem] p-[0.65rem] mt-[1rem] tracking-widest ">
+              SEND
+              <Image src={send} width={20} height={20} alt="arrowSvg" />
+            </button>
+          </div>
         </div>
       </form>
     </main>

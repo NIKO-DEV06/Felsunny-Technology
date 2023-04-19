@@ -61,7 +61,7 @@ const Header = () => {
                 Services
               </Link>
               <Link href={"/contact"}>
-                <div className="bg-black text-white py-3 px-4 flex gap-3 rounded-full cursor-pointer group">
+                <div className="bg-black text-white py-3 w-[9rem] flex gap-3 items-center justify-center rounded-full cursor-pointer group">
                   Contact
                   <Image
                     alt="arrow"

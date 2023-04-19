@@ -43,8 +43,8 @@
 }
 
 .inputs {
-  @apply outline-none border-[1px] focus:border-black indent-4 h-[2.5rem] w-[21rem] rounded-none appearance-none text-[0.95rem];
+  @apply outline-none border-[1px] focus:border-black indent-4 h-[2.5rem] w-[21rem] lg:h-[3rem] lg:w-[27rem] rounded-none appearance-none text-[0.95rem] lg:text-[1rem];
 }
 .select {
-  @apply outline-none indent-4 h-[2.5rem] w-[21rem] rounded-none appearance-none;
+  @apply outline-none indent-4 h-[2.5rem] w-[21rem] lg:h-[3rem] lg:w-[27rem] rounded-none appearance-none;
 }
