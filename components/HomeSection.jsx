@@ -1,13 +1,26 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 import businessSvg from "../images/business.svg";
 import blob from "../images/blob.svg";
 
 const HomeSection = () => {
+  const heroVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+  };
+
   return (
     <div className="">
-      <div className="lg:flex w-full gap-[10rem] xl:gap-[18rem]">
+      <motion.div
+        initial="hidden"
+        animate="visible"
+        variants={heroVariants}
+        className="lg:flex w-full gap-[10rem] xl:gap-[18rem]"
+      >
         <h1 className="text-[1.8rem] md:text-[2.5rem] lg:text-[3.2rem] lg:leading-[5rem] pt-[10rem] font-bold text-center px-6 lg:text-left lg:w-[50%] lg:translate-y-[-2rem]">
           Streamline your business operations with our services
         </h1>
@@ -21,15 +34,20 @@ const HomeSection = () => {
           priority
         />
 
-        <Image
+        {/* <Image
           src={blob}
           alt="blob SVG"
           width={300}
           height={300}
           className="absolute -z-20 left-1/2 transform -translate-x-1/2 translate-y-[-12rem] lg:hidden"
-        />
-      </div>
-      <div className="mt-[2rem] text-black bg-white mx-[1.5rem] lg:mt-[5rem] rounded-[1rem]">
+        /> */}
+      </motion.div>
+      <motion.div
+        initial="hidden"
+        animate="visible"
+        variants={heroVariants}
+        className="mt-[2rem] text-black bg-white mx-[1.5rem] lg:mt-[5rem] rounded-[1rem]"
+      >
         <div className="pb-[5rem] md:text-[1.2rem] xl:px-[8rem] lg:px-[5rem]">
           <p className=" ml-5 pt-[3rem] lg:text-[0.9rem] font-semibold lg:font-normal">
             ------- WHAT WE DO
@@ -45,7 +63,7 @@ const HomeSection = () => {
             </div>
           </Link>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };
