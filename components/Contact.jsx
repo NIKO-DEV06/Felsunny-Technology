@@ -3,16 +3,14 @@
 import Image from "next/image";
 
 import down from "../images/down.svg";
-import arrow from "../images/arrowWhite.svg";
+import send from "../images/send.svg";
 
 const Contact = () => {
   return (
-    <main className="pt-[8rem] pb-[15rem] bg-[#dfe8ec]">
-      <p className="text-center tracking-wider uppercase text-[0.9rem] pb-[1rem]">
-        contact
-      </p>
-      <h1 className="text-[1.7rem] text-center mx-auto w-[20rem] font-semibold">
-        Love to hear from you, Get in touch 👋
+    <main className="pt-[7.5rem] pb-[7rem] bg-[#dfe8ec]">
+      <h1 className="text-[1.7rem] text-center mx-auto w-[20rem] font-semibold lg:text-red-500 xl:text-green-500 md:text-blue-600">
+        Love to hear from you, Get in touch{" "}
+        <span className="animate-pulse">👋</span>
       </h1>
       <form className="pt-[1.5rem]">
         <div className="flex flex-col gap-[1rem] ">
@@ -77,12 +75,10 @@ const Contact = () => {
             </div>
           </div>
         </div>
-        <div className="flex justify-center items-center">
-          <button className="bg-black text-white w-[21rem] p-[0.65rem] mt-[1rem] tracking-widest">
+        <div className="relative flex justify-center items-center">
+          <button className="flex justify-center items-center gap-[0.5rem] bg-black text-white w-[21rem] p-[0.65rem] mt-[1rem] tracking-widest">
             SEND
-            {/* <span className="absolute top-1/4 left-[60%]">
-              <Image src={arrow} width={20} height={20} alt="arrowSvg" />
-            </span> */}
+            <Image src={send} width={20} height={20} alt="arrowSvg" />
           </button>
         </div>
       </form>
