@@ -2,11 +2,22 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 import down from "../images/down.svg";
 import send from "../images/send.svg";
 
 const Contact = () => {
+  const { ref: ref1, inView: inView1 } = useInView({
+    threshold: 0.5,
+    triggerOnce: true,
+  });
+
+  const variants = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: { opacity: 1, scale: 1, transition: { duration: 1 } },
+  };
+
   const submitFormHandler = (e) => {
     e.preventDefault();
   };
@@ -18,14 +29,24 @@ const Contact = () => {
       >
         <div className="flex flex-col gap-[1rem] lg:gap-[1.5rem]">
           <div className="flex flex-col items-center md:items-start">
-            <h1 className="text-[1.7rem] lg:text-[2.3rem] lg:w-[25rem] text-center md:text-left md:mx-0 mx-auto w-[20rem] font-semibold md:font-[500] mb-[1rem]">
+            <motion.h1  initial="hidden"
+             animate="visible"
+             variants={variants} className="text-[1.7rem] lg:text-[2.3rem] lg:w-[25rem] text-center md:text-left md:mx-0 mx-auto w-[20rem] font-semibold md:font-[500] mb-[1rem]">
               Love to hear from you, Get in touch{" "}
               <span className="animate-pulse">👋</span>
-            </h1>
+            </motion.h1>
           </div>
 
-          <div className="flex flex-col md:flex-row gap-[1rem] items-start">
-            <div className="flex flex-col gap-[0.4rem]">
+          <div
+           
+            className="flex flex-col md:flex-row gap-[1rem] items-start"
+          >
+            <motion.div
+             initial="hidden"
+             animate="visible"
+             variants={variants}
+              className="flex flex-col gap-[0.4rem]"
+            >
               <p className="font-[500] tracking-wider lg:text-[1.1rem]">
                 Your Name
               </p>
@@ -36,8 +57,13 @@ const Contact = () => {
                 autoComplete="off"
                 className="inputs"
               />
-            </div>
-            <div className="flex flex-col gap-[0.4rem]">
+            </motion.div>
+            <motion.div
+               initial="hidden"
+               animate="visible"
+               variants={variants}
+              className="flex flex-col gap-[0.4rem]"
+            >
               <p className="font-[500] tracking-wider lg:text-[1.1rem]">
                 Your Email
               </p>
@@ -48,10 +74,15 @@ const Contact = () => {
                 autoComplete="off"
                 className="inputs"
               />
-            </div>
+            </motion.div>
           </div>
           <div className="flex flex-col items-center md:items-start">
-            <div className="relative flex flex-col gap-[0.4rem]">
+            <motion.div
+              initial="hidden"
+              animate="visible"
+              variants={variants}
+              className="relative flex flex-col gap-[0.4rem]"
+            >
               <Image
                 src={down}
                 width={15}
@@ -74,10 +105,15 @@ const Contact = () => {
                 <option value="devices">Gadgets & Devices</option>
                 <option value="consultancy">Consultancy Services</option>
               </select>
-            </div>
+            </motion.div>
           </div>
           <div className="flex flex-col items-center md:items-start">
-            <div className="flex flex-col gap-[0.4rem]">
+            <motion.div
+              initial="hidden"
+              animate="visible"
+              variants={variants}
+              className="flex flex-col gap-[0.4rem]"
+            >
               <p className="font-[500] tracking-wider lg:text-[1.1rem]">
                 Message
               </p>
@@ -89,13 +125,15 @@ const Contact = () => {
                 placeholder="Let us know what your project is about"
                 className="outline-none border-[1px] focus:border-black h-[11rem] w-[21rem] md:w-[43rem] lg:w-[55rem] rounded-none appearance-none resize-none px-4 py-3 text-[0.95rem] lg:text-[1rem] "
               />
-            </div>
+            </motion.div>
           </div>
           <div className="flex flex-col items-center md:items-start">
             <motion.button
-              initial={{ scale: 1 }}
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
               whileTap={{ scale: 0.9 }}
               transition={{ duration: 0 }}
+              variants={variants}
               className="flex justify-center items-center gap-[0.5rem] bg-black text-white w-[21rem] lg:w-[27rem] p-[0.65rem] mt-[1rem] tracking-widest md:hover:bg-[#b3bdc2] md:hover:text-black duration-200 "
             >
               SEND
