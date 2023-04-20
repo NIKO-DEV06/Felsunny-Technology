@@ -2,22 +2,37 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
 
 import businessSvg from "../images/business.svg";
-import blob from "../images/blob.svg";
+// import blob from "../images/blob.svg";
 
 const HomeSection = () => {
+  const { ref: ref1, inView: inView1 } = useInView({
+    threshold: 0.5,
+    triggerOnce: true,
+  });
+  const { ref: ref2, inView: inView2 } = useInView({
+    threshold: 0.2,
+    triggerOnce: true,
+  });
+
   const heroVariants = {
     hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.7 } },
+  };
+  const itemsVariants = {
+    hidden: { opacity: 0, x: -50 },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.7 } },
   };
 
   return (
     <div className="">
       <motion.div
+        ref={ref1}
         initial="hidden"
-        animate="visible"
+        animate={inView1 ? "visible" : "hidden"}
         variants={heroVariants}
         className="lg:flex w-full gap-[10rem] xl:gap-[18rem]"
       >
@@ -33,36 +48,42 @@ const HomeSection = () => {
           className="mx-auto lg:mx-0 mt-[1rem] lg:scale-[1.5]"
           priority
         />
-
-        {/* <Image
-          src={blob}
-          alt="blob SVG"
-          width={300}
-          height={300}
-          className="absolute -z-20 left-1/2 transform -translate-x-1/2 translate-y-[-12rem] lg:hidden"
-        /> */}
       </motion.div>
       <motion.div
+        ref={ref2}
         initial="hidden"
-        animate="visible"
+        animate={inView2 ? "visible" : "hidden"}
         variants={heroVariants}
         className="mt-[2rem] text-black bg-white mx-[1.5rem] lg:mt-[5rem] rounded-[1rem]"
       >
-        <div className="pb-[5rem] md:text-[1.2rem] xl:px-[8rem] lg:px-[5rem]">
-          <p className=" ml-5 pt-[3rem] lg:text-[0.9rem] font-semibold lg:font-normal">
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          transition={{ staggerChildren: 0.2 }}
+          className="pb-[5rem] md:text-[1.2rem] xl:px-[8rem] lg:px-[5rem]"
+        >
+          <motion.p
+            variants={itemsVariants}
+            className=" ml-5 pt-[3rem] lg:text-[0.9rem] font-semibold lg:font-normal"
+          >
             ------- WHAT WE DO
-          </p>
-          <p className="pt-[1.5rem] px-5 lg:text-[1.5rem] xl:text-[1.8rem]">
+          </motion.p>
+          <motion.p
+            variants={itemsVariants}
+            className="pt-[1.5rem] px-5 lg:text-[1.5rem] xl:text-[1.8rem]"
+          >
             We provide business solutions, including sales and distribution,
             government supplies, construction, consultancy services, and
             property sales. Contact us today to learn more.
-          </p>
-          <Link href={"/about"}>
-            <div className="text-white bg-black mx-auto text-center w-[8.5rem] py-3 rounded-md mt-[2rem] cursor-pointer lg:mx-0 lg:ml-[1.2rem] hover:bg-[#b3bdc2] hover:text-black duration-200 md:text-[0.95rem]">
-              LEARN MORE
-            </div>
-          </Link>
-        </div>
+          </motion.p>
+          <motion.div
+            variants={itemsVariants}
+            className="text-white bg-black mx-auto text-center w-[8.5rem] py-3 rounded-md mt-[2rem] cursor-pointer lg:mx-0 lg:ml-[1.2rem] hover:bg-[#b3bdc2] hover:text-black duration-200 md:text-[0.95rem]"
+          >
+            <Link href={"/about"}>LEARN MORE</Link>
+          </motion.div>
+          <motion.div />
+        </motion.div>
       </motion.div>
     </div>
   );

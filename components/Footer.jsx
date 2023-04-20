@@ -2,6 +2,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useInView } from "react-intersection-observer";
+import { motion } from "framer-motion";
 
 import logo from "../images/logoWhite.svg";
 import twitter from "../images/twitter.svg";
@@ -11,10 +13,27 @@ import linkedin from "../images/linkedin.svg";
 
 const Footer = () => {
   const pathname = usePathname();
+  const { ref: ref1, inView: inView1 } = useInView({
+    threshold: 0.5,
+    triggerOnce: true,
+  });
+  const { ref: ref2, inView: inView2 } = useInView({
+    threshold: 0.5,
+    triggerOnce: true,
+  });
+
+  const variants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { duration: 0.7 } },
+  };
 
   return (
     <footer className="bg-[#1c1b1d] text-white pb-[2rem]">
-      <aside
+      <motion.aside
+        ref={ref1}
+        initial="hidden"
+        animate={inView1 ? "visible" : "hidden"}
+        variants={variants}
         className={`text-black bg-white mx-[1rem] md:mx-[5rem] lg:mx-[9rem] xl:mx-[10rem] lg:py-[3rem] rounded-[1rem] -translate-y-[40%] ${
           pathname === "/contact" ? "hidden" : ""
         }`}
@@ -35,8 +54,12 @@ const Footer = () => {
             </div>
           </Link>
         </div>
-      </aside>
-      <div
+      </motion.aside>
+      <motion.div
+        ref={ref2}
+        initial="hidden"
+        animate={inView2 ? "visible" : "hidden"}
+        variants={variants}
         className={`${
           pathname === "/contact"
             ? "translate-y-[-2.5rem] lg:translate-y-[-2.5rem] pt-[3rem] lg:pt-[7rem]"
@@ -44,14 +67,17 @@ const Footer = () => {
         }  lg:flex lg:flex-col lg:items-center`}
       >
         <div className="lg:flex lg:gap-[23rem] xl:gap-[32rem]">
-          <Image
-            className="h-[5rem] w-[17rem] object-left object-cover mx-auto lg:translate-x-[-3rem] lg:scale-[1.2]"
-            src={logo}
-            alt="Felsunny Logo"
-            width={270}
-            height={270}
-            priority
-          />
+          <div>
+            {" "}
+            <Image
+              className="h-[5rem] w-[17rem] object-left object-cover mx-auto lg:translate-x-[-3rem] lg:scale-[1.2]"
+              src={logo}
+              alt="Felsunny Logo"
+              width={270}
+              height={270}
+              priority
+            />
+          </div>
           <hr className="lg:hidden border-[#6b686e] w-[85%] mx-auto py-[1rem] mt-[1rem]" />
           <div className="flex flex-col lg:flex-row gap-[1.2rem] lg:gap-[1.5rem] items-center font-[400] uppercase tracking-widest text-[0.95rem]">
             <Link className="hover:opacity-50 duration-300" href={"/about"}>
@@ -118,7 +144,7 @@ const Footer = () => {
             </p>
           </div>
         </div>
-      </div>
+      </motion.div>
     </footer>
   );
 };

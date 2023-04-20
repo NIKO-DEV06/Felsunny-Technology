@@ -23,11 +23,16 @@ const Header = () => {
 
   const linkVariants = {
     hidden: { opacity: 0, y: -50 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.2 } },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.7 } },
   };
   return (
     <Fragment>
-      <header className="fixed w-full border-b-[0.5px] border-[#9a979c] h-[5rem] md:h-[6rem] shadowheader-shadow bg-[#dfe8ec] z-20">
+      <motion.header
+        initial="hidden"
+        animate="visible"
+        variants={linkVariants}
+        className="fixed w-full border-b-[0.5px] border-[#9a979c] h-[5rem] md:h-[6rem] shadowheader-shadow bg-[#dfe8ec] z-20"
+      >
         <div className="flex justify-between items-center h-full px-6 md:px-[5rem]">
           <motion.div
             initial="hidden"
@@ -52,7 +57,7 @@ const Header = () => {
               transition={{ staggerChildren: 0.2 }}
               className="hidden md:flex md:flex-row gap-[2.5rem] md:items-center md:font-[300] uppercase tracking-wider text-[0.95rem]"
             >
-              <motion.div variants={linkVariants} className="listnone">
+              <motion.div variants={linkVariants}>
                 <Link
                   className={`link-with-underline ${
                     pathname === "/" ? "active-link" : ""
@@ -112,7 +117,7 @@ const Header = () => {
             <Image src={menu} alt="Menu" width={35} height={35} />
           </motion.div>
         </div>
-      </header>
+      </motion.header>
       {isNav && <MobileNav onClose={closeNav} />}
     </Fragment>
   );

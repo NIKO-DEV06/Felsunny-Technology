@@ -6,9 +6,15 @@ import down from "../images/down.svg";
 import send from "../images/send.svg";
 
 const Contact = () => {
+  const submitFormHandler = (e) => {
+    e.preventDefault();
+  };
   return (
     <main className="pt-[7.5rem] pb-[7rem] bg-[#dfe8ec]">
-      <form className="pt-[1.5rem] flex flex-col items-center justify-start">
+      <form
+        onSubmit={submitFormHandler}
+        className="pt-[1.5rem] flex flex-col items-center justify-start"
+      >
         <div className="flex flex-col gap-[1rem] lg:gap-[1.5rem]">
           <div className="flex flex-col items-center md:items-start">
             <h1 className="text-[1.7rem] lg:text-[2.3rem] lg:w-[25rem] text-center md:text-left md:mx-0 mx-auto w-[20rem] font-semibold md:font-[500] mb-[1rem]">

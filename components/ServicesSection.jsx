@@ -1,5 +1,9 @@
+"use client";
+
 import { Fragment } from "react";
 import Image from "next/image";
+import { useInView } from "react-intersection-observer";
+import { motion } from "framer-motion";
 
 import dis from "../images/dis.webp";
 import construction from "../images/construction.jpeg";
@@ -50,18 +54,56 @@ const services = [
 ];
 
 const ServicesSection = () => {
+  const { ref: ref1, inView: inView1 } = useInView({
+    threshold: 0.5,
+    triggerOnce: true,
+  });
+  const { ref: ref2, inView: inView2 } = useInView({
+    threshold: 0.2,
+    triggerOnce: true,
+  });
+  const { ref: ref3, inView: inView3 } = useInView({
+    threshold: 0.2,
+    triggerOnce: true,
+  });
+
+  const variants = {
+    hidden: { opacity: 0, y: 100 },
+    visible: { opacity: 1, y: 0, transition: { duration: 1 } },
+  };
+
   return (
     <Fragment>
       <div className=" translate-y-[-5rem] pt-[5rem] pb-[7rem]">
-        <p className="text-center lg:pt-[10rem] pt-[5rem] uppercase tracking-widest">
+        <motion.p
+          ref={ref1}
+          initial="hidden"
+          animate={inView1 ? "visible" : "hidden"}
+          variants={variants}
+          className="text-center lg:pt-[10rem] pt-[5rem] uppercase tracking-widest"
+        >
           ~services~
-        </p>
-        <h1 className="text-center text-[1.5rem] px-[4rem] font-bold mt-[1rem] lg:text-[2rem] lg:w-[30rem] lg:mx-auto lg:pb-[2rem] xl:text-[2.5rem] xl:w-[35rem]">
+        </motion.p>
+        <motion.h1
+          ref={ref2}
+          initial="hidden"
+          animate={inView2 ? "visible" : "hidden"}
+          variants={variants}
+          className="text-center text-[1.5rem] px-[4rem] font-bold mt-[1rem] lg:text-[2rem] lg:w-[30rem] lg:mx-auto lg:pb-[2rem] xl:text-[2.5rem] xl:w-[35rem]"
+        >
           What you can expect from us
-        </h1>
-        <div className="flex flex-col md:flex-row md:justify-center md:flex-wrap gap-[2rem] lg:gap-[3rem] xl:gap-[4rem] items-center mt-[1.2rem] ">
+        </motion.h1>
+
+        <motion.div
+          ref={ref3}
+          initial="hidden"
+          animate={inView3 ? "visible" : "hidden"}
+          transition={{ staggerChildren: 0.2 }}
+          className="flex flex-col md:flex-row md:justify-center md:flex-wrap gap-[2rem] lg:gap-[3rem] xl:gap-[4rem] items-center mt-[1.2rem] "
+        >
           {services.map((service) => (
-            <div
+            <motion.div
+              variants={variants}
               key={service.id}
               className="relative p-2 lg:p-0 rounded-[1rem]"
             >
@@ -95,9 +137,9 @@ const ServicesSection = () => {
                   className="relative h-[17rem] lg:h-[20rem] lg:w-[25rem] xl:h-[23rem] xl:w-[28rem] rounded-[1rem] duration-200 shadow-input-shadow"
                 />
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </Fragment>
   );
