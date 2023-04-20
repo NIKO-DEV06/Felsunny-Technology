@@ -96,7 +96,7 @@ const Contact = () => {
               initial={{ scale: 1 }}
               whileTap={{ scale: 0.9 }}
               transition={{ duration: 0 }}
-              className="flex justify-center items-center gap-[0.5rem] bg-black text-white w-[21rem] lg:w-[27rem] p-[0.65rem] mt-[1rem] tracking-widest md:hover:bg-[#b3bdc2] md:hover:text-black md:duration-200 "
+              className="flex justify-center items-center gap-[0.5rem] bg-black text-white w-[21rem] lg:w-[27rem] p-[0.65rem] mt-[1rem] tracking-widest md:hover:bg-[#b3bdc2] md:hover:text-black duration-200 "
             >
               SEND
               <Image src={send} width={20} height={20} alt="arrowSvg" />
