@@ -51,10 +51,7 @@ const Contact = () => {
             </div>
           </div>
           <div className="flex flex-col items-center md:items-start">
-            <div
-            
-              className="relative flex flex-col gap-[0.4rem]"
-            >
+            <div className="relative flex flex-col gap-[0.4rem]">
               <Image
                 src={down}
                 width={15}
@@ -99,7 +96,7 @@ const Contact = () => {
               initial={{ scale: 1 }}
               whileTap={{ scale: 0.9 }}
               transition={{ duration: 0 }}
-              className="flex justify-center items-center gap-[0.5rem] bg-black text-white w-[21rem] lg:w-[27rem] p-[0.65rem] mt-[1rem] tracking-widest hover:bg-[#b3bdc2] hover:text-black duration-200 "
+              className="flex justify-center items-center gap-[0.5rem] bg-black text-white w-[21rem] lg:w-[27rem] p-[0.65rem] mt-[1rem] tracking-widest md:hover:bg-[#b3bdc2] md:hover:text-black md:duration-200 "
             >
               SEND
               <Image src={send} width={20} height={20} alt="arrowSvg" />
