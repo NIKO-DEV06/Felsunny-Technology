@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 import down from "../images/down.svg";
 import send from "../images/send.svg";
@@ -50,7 +51,10 @@ const Contact = () => {
             </div>
           </div>
           <div className="flex flex-col items-center md:items-start">
-            <div className="relative flex flex-col gap-[0.4rem]">
+            <div
+            
+              className="relative flex flex-col gap-[0.4rem]"
+            >
               <Image
                 src={down}
                 width={15}
@@ -58,14 +62,13 @@ const Contact = () => {
                 alt="downSvg"
                 className="absolute right-[1.5rem] translate-y-[2.7rem] lg:translate-y-[3rem]"
               />
-
               <p className="font-[500] tracking-wider lg:text-[1.1rem]">
                 Select Service
               </p>
               <select
                 id="dropdown"
                 name="services"
-                className="select bg-white text-[0.95rem] lg:text-[1rem] font-[500] text-[#656161]"
+                className="select cursor-pointer bg-white text-[0.95rem] lg:text-[1rem] font-[500] text-[#656161]"
               >
                 <option value="sales">Sales & Distribution</option>
                 <option value="supplies">Government Supplies</option>
@@ -92,10 +95,15 @@ const Contact = () => {
             </div>
           </div>
           <div className="flex flex-col items-center md:items-start">
-            <button className="flex justify-center items-center gap-[0.5rem] bg-black text-white w-[21rem] lg:w-[27rem] p-[0.65rem] mt-[1rem] tracking-widest ">
+            <motion.button
+              initial={{ scale: 1 }}
+              whileTap={{ scale: 0.9 }}
+              transition={{ duration: 0 }}
+              className="flex justify-center items-center gap-[0.5rem] bg-black text-white w-[21rem] lg:w-[27rem] p-[0.65rem] mt-[1rem] tracking-widest hover:bg-[#b3bdc2] hover:text-black duration-200 "
+            >
               SEND
               <Image src={send} width={20} height={20} alt="arrowSvg" />
-            </button>
+            </motion.button>
           </div>
         </div>
       </form>

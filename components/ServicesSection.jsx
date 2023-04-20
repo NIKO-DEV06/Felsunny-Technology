@@ -72,6 +72,11 @@ const ServicesSection = () => {
     visible: { opacity: 1, y: 0, transition: { duration: 1 } },
   };
 
+  const servicesVariants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { duration: 0.8 } },
+  };
+
   return (
     <Fragment>
       <div className=" translate-y-[-5rem] pt-[5rem] pb-[7rem]">
@@ -98,12 +103,12 @@ const ServicesSection = () => {
           ref={ref3}
           initial="hidden"
           animate={inView3 ? "visible" : "hidden"}
-          transition={{ staggerChildren: 0.2 }}
+          transition={{ staggerChildren: 0.3 }}
           className="flex flex-col md:flex-row md:justify-center md:flex-wrap gap-[2rem] lg:gap-[3rem] xl:gap-[4rem] items-center mt-[1.2rem] "
         >
           {services.map((service) => (
             <motion.div
-              variants={variants}
+              variants={servicesVariants}
               key={service.id}
               className="relative p-2 lg:p-0 rounded-[1rem]"
             >
