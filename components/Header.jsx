@@ -1,15 +1,15 @@
 "use client";
 
 import { Fragment, useState } from "react";
+import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 import logo from "../images/logo.svg";
 import menu from "../images/menu.svg";
 import arrow from "../images/arrow.svg";
-import Link from "next/link";
-import MobileNav from "./MobileNav";
+import cancel from "../images/cancel.svg";
 
 const Header = () => {
   const pathname = usePathname();
@@ -25,6 +25,29 @@ const Header = () => {
     hidden: { opacity: 0, y: -50 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.7 } },
   };
+
+  const navVariants = {
+    hidden: {
+      x: "100%",
+    },
+    visible: {
+      x: "0%",
+      transition: {
+        duration: 0.3,
+        ease: "easeInOut",
+        type: "spring",
+        damping: 25,
+        stiffness: 400,
+      },
+    },
+    exit: {
+      x: "100%",
+      transition: {
+        duration: 0.3,
+        ease: "easeInOut",
+      },
+    },
+  };
   return (
     <Fragment>
       <motion.header
@@ -39,16 +62,14 @@ const Header = () => {
             animate="visible"
             variants={linkVariants}
           >
-            <Link href={"/"}>
-              <Image
-                className="translate-x-[-3rem]"
-                src={logo}
-                alt="Felsunny Logo"
-                width={270}
-                height={270}
-                priority
-              />
-            </Link>
+            <Image
+              className="translate-x-[-3rem]"
+              src={logo}
+              alt="Felsunny Logo"
+              width={270}
+              height={270}
+              priority
+            />
           </motion.div>
           <div>
             <motion.div
@@ -118,7 +139,65 @@ const Header = () => {
           </motion.div>
         </div>
       </motion.header>
-      {isNav && <MobileNav onClose={closeNav} />}
+      <AnimatePresence initial={true} mode="wait">
+        {isNav && (
+          <Fragment>
+            <motion.div
+              key={Math.random()}
+              initial="hidden"
+              animate="visible"
+              exit="exit"
+              variants={navVariants}
+              className="fixed md:hidden top-0 bottom-0 right-0 z-50 left-[30%] bg-[#0000007F] backdrop-blur-[2rem] flex flex-col gap-[2.5rem] md:font-[300] uppercase tracking-wider text-[0.95rem] py-[10rem] px-[2rem] text-white"
+            >
+              <Image
+                onClick={closeNav}
+                src={cancel}
+                alt="cancel-svg"
+                width={40}
+                height={40}
+                className="fixed right-[1.5rem] top-[1.5rem] z-50 z cursor-pointer"
+              />
+              <Link
+                onClick={closeNav}
+                className="flex gap-[0.5rem] cursor-pointer"
+                href={"/"}
+              >
+                <span className="font-bold">00</span> Home
+              </Link>
+              <Link
+                onClick={closeNav}
+                className="flex gap-[0.5rem] cursor-pointer"
+                href={"/about"}
+              >
+                <span className="font-bold">01</span> About
+              </Link>
+              <Link
+                onClick={closeNav}
+                className="flex gap-[0.5rem] cursor-pointer"
+                href={"/services"}
+              >
+                <span className="font-bold">02</span> Services
+              </Link>
+              <Link
+                onClick={closeNav}
+                className="flex gap-[0.5rem] cursor-pointer"
+                href={"/contact"}
+              >
+                <span className="font-bold">03</span> Contact
+              </Link>
+            </motion.div>
+            <motion.div
+              key="backdrop"
+              className="fixed md:hidden bg-black inset-0 z-[49] opacity-30"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 0.3 }}
+              exit={{ opacity: 0 }}
+              onClick={closeNav}
+            ></motion.div>
+          </Fragment>
+        )}
+      </AnimatePresence>
     </Fragment>
   );
 };

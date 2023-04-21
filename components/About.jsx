@@ -130,8 +130,8 @@ const About = () => {
         <Image
           src={ceo}
           alt="ceo"
-          width={300}
-          heght={300}
+          width={330}
+          heght={330}
           className="mx-auto "
           priority
         />
