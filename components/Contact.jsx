@@ -30,7 +30,18 @@ const Contact = () => {
               className="text-[1.7rem] lg:text-[2.3rem] lg:w-[25rem] text-center md:text-left md:mx-0 mx-auto w-[20rem] font-semibold md:font-[500] mb-[1rem]"
             >
               Love to hear from you, Get in touch{" "}
-              <span className="animate-pulse">👋</span>
+              <motion.span
+                animate={{ rotate: [0, 10, -8, 0] }}
+                transition={{
+                  duration: 0.8,
+                  repeat: Infinity,
+                  repeatType: "reverse",
+                  ease: "linear",
+                }}
+                className="animate-pulse inline-block"
+              >
+                👋
+              </motion.span>
             </motion.h1>
           </div>
 
@@ -136,7 +147,7 @@ const Contact = () => {
                 width={20}
                 height={20}
                 alt="arrowSvg"
-                className=" group-hover:invert"
+                className=" md:group-hover:invert"
               />
             </motion.button>
           </div>

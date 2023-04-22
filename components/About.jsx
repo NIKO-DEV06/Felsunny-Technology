@@ -78,7 +78,7 @@ const About = () => {
         initial="hidden"
         animate={inView2 ? "visible" : "hidden"}
         transition={{ staggerChildren: 0.3 }}
-        className="grid place-items-center gap-[1rem] mx-[2rem] md:grid-cols-2 lg:grid-cols-3 mt-[2rem]"
+        className="grid place-items-center gap-[1rem] mx-[2rem] md:grid-cols-2 lg:grid-cols-3 mt-[1rem]"
       >
         <motion.div
           variants={factVariants}
@@ -116,6 +116,24 @@ const About = () => {
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
           </p>
         </motion.div>
+        <motion.div
+          variants={factVariants}
+          className="grid place-items-center bg-white w-[20rem] h-[15rem] p-[1rem]"
+        >
+          <h1 className="text-[4rem] font-bold">36</h1>
+          <p className="">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          </p>
+        </motion.div>
+        <motion.div
+          variants={factVariants}
+          className="grid place-items-center bg-white w-[20rem] h-[15rem] p-[1rem]"
+        >
+          <h1 className="text-[4rem] font-bold">36</h1>
+          <p className="">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          </p>
+        </motion.div>
       </motion.div>
 
       <motion.div
@@ -135,10 +153,10 @@ const About = () => {
           className="mx-auto "
           priority
         />
-        <p className="text-[1rem] md:text-center text-left ml-[3rem] font-semibold md:font-[400] mt-[0.5rem]">
+        <p className="text-[1rem] md:text-center text-left ml-[3rem] font-semibold mt-[0.5rem]">
           Ayeniko Felix Sunday
         </p>
-        <p className="text-[1rem] md:text-center text-left ml-[3rem] font-semibold md:font-[400] mt-[0.5rem]">
+        <p className="text-[1rem] md:text-center text-left ml-[3rem] font-semibold mt-[0.5rem]">
           {" "}
           Founder and Cheif Executive Officer
         </p>

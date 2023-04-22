@@ -36,18 +36,26 @@ const HomeSection = () => {
         variants={heroVariants}
         className="lg:flex w-full gap-[10rem] xl:gap-[18rem]"
       >
-        <h1 className="text-[1.8rem] md:text-[2.5rem] lg:text-[3.2rem] lg:leading-[5rem] pt-[10rem] font-bold text-center px-6 lg:text-left lg:w-[50%] lg:translate-y-[-2rem]">
+        <h1 className="text-[1.8rem] md:text-[2.5rem] lg:text-[3.2rem] lg:leading-[5rem] pt-[10rem] font-bold md:text-center text-left px-6 lg:text-left lg:w-[50%] lg:translate-y-[-2rem]">
           Streamline your business operations with our services
         </h1>
-
-        <Image
-          src={businessSvg}
-          alt="Home page SVG"
-          width={250}
-          height={250}
-          className="mx-auto lg:mx-0 mt-[1rem] lg:scale-[1.5]"
-          priority
-        />
+        <motion.div
+          animate={{ y: [-10, 10] }}
+          transition={{
+            duration: 2,
+            repeat: Infinity,
+            repeatType: "reverse",
+          }}
+        >
+          <Image
+            src={businessSvg}
+            alt="Home page SVG"
+            width={250}
+            height={250}
+            className="mx-auto lg:mx-0 mt-[1rem] lg:scale-[1.5] lg:translate-y-[95%]"
+            priority
+          />
+        </motion.div>
       </motion.div>
       <motion.div
         ref={ref2}

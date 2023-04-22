@@ -62,14 +62,16 @@ const Header = () => {
             animate="visible"
             variants={linkVariants}
           >
-            <Image
-              className="translate-x-[-3rem]"
-              src={logo}
-              alt="Felsunny Logo"
-              width={270}
-              height={270}
-              priority
-            />
+            <Link href={"/"}>
+              <Image
+                className="translate-x-[-3rem] h-[5rem] md:h-[6rem] object-cover"
+                src={logo}
+                alt="Felsunny Logo"
+                width={270}
+                height={270}
+                priority
+              />
+            </Link>
           </motion.div>
           <div>
             <motion.div
@@ -189,9 +191,9 @@ const Header = () => {
             </motion.div>
             <motion.div
               key="backdrop"
-              className="fixed md:hidden bg-black inset-0 z-[49] opacity-30"
+              className="fixed md:hidden bg-black inset-0 z-[49] opacity-40"
               initial={{ opacity: 0 }}
-              animate={{ opacity: 0.3 }}
+              animate={{ opacity: 0.4 }}
               exit={{ opacity: 0 }}
               onClick={closeNav}
             ></motion.div>
