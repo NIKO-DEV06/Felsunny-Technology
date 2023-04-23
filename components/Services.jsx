@@ -23,7 +23,7 @@ const Services = () => {
           </p>
           <h1 className="font-bold text-[2rem] tracking-wider">
             What Services <br />
-            We're Offering
+            {"We're"} Offering
           </h1>
         </div>
         <div>
