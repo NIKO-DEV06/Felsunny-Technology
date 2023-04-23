@@ -28,7 +28,7 @@ const About = () => {
     visible: { opacity: 1, transition: { duration: 1 } },
   };
   return (
-    <main className="pt-[7.5rem] md:pt-[9rem] pb-[13rem] bg-[#dfe8ec]">
+    <main className="pt-[3rem] md:pt-[9rem] pb-[13rem] bg-[#dfe8ec]">
       <div className="">
         <motion.div initial="hidden" animate="visible" variants={variants}>
           <Image
@@ -36,7 +36,7 @@ const About = () => {
             alt="about"
             width={300}
             heght={300}
-            className="mx-auto w-full md:w-auto"
+            className="mx-auto w-full md:w-[30rem]"
             priority
           />
         </motion.div>

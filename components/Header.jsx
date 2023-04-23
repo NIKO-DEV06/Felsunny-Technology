@@ -131,9 +131,7 @@ const Header = () => {
             </motion.div>
           </div>
           <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={linkVariants}
+            whileTap={{ scale: 0.9 }}
             onClick={openNav}
             className="md:hidden flex items-center"
           >
@@ -158,7 +156,7 @@ const Header = () => {
                 alt="cancel-svg"
                 width={40}
                 height={40}
-                className="fixed right-[1.5rem] top-[1.5rem] z-50 z cursor-pointer"
+                className="fixed right-[1.5rem] top-[1.5rem] z-50 cursor-pointer"
               />
               <Link
                 onClick={closeNav}
