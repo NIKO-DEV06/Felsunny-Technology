@@ -8,14 +8,14 @@ import pic2 from "../../images/cons1.jpg";
 const Construction = () => {
   return (
     <main className="pt-[7rem] md:pt-[8rem] pb-[13rem] bg-[#dfe8ec]">
-      <Link href="/services">
-        <div className="bg-white dark:bg-darkBlue shadow-input-shadow w-[7rem] ml-5 cursor-pointer md:ml-[3.5rem] lg:ml-[5.5rem] xl:ml-[6.5rem] rounded-md">
+      <div className="bg-white dark:bg-darkBlue shadow-input-shadow w-[7rem] ml-5 cursor-pointer md:ml-[3.5rem] lg:ml-[5.5rem] xl:ml-[6.5rem] rounded-md">
+        <Link href="/services">
           <div className="flex py-2 justify-center gap-3 font-semibold">
             <Image src={back} alt="backSvg" width={20} height={20} />
             <p>Back</p>
           </div>
-        </div>
-      </Link>
+        </Link>
+      </div>
       <div className="md:flex justify-between md:mx-[2rem] lg:mx-[4rem] xl:mx-[5rem] md:gap-[2rem]">
         <div className="mt-[1.5rem] ml-[1.5rem]">
           <h1 className="uppercase text-[2.2rem] md:text-[3.5rem] lg:text-[4rem] xl:text-[4.5rem] font-[800] mx-auto">
