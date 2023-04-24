@@ -14,11 +14,9 @@ import linkedin from "../images/linkedin.svg";
 const Footer = () => {
   const pathname = usePathname();
   const { ref: ref1, inView: inView1 } = useInView({
-    threshold: 0.5,
     triggerOnce: true,
   });
   const { ref: ref2, inView: inView2 } = useInView({
-    threshold: 0.5,
     triggerOnce: true,
   });
 

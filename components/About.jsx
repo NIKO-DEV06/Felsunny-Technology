@@ -9,26 +9,23 @@ import ceo from "../images/ceo.jpg";
 
 const About = () => {
   const { ref: ref1, inView: inView1 } = useInView({
-    threshold: 0.5,
+    threshold: 0.3,
     triggerOnce: true,
   });
   const { ref: ref2, inView: inView2 } = useInView({
     triggerOnce: true,
   });
-  const { ref: ref3, inView: inView3 } = useInView({
-    triggerOnce: true,
-  });
 
   const variants = {
-    hidden: { opacity: 0, scale: 0.8 },
-    visible: { opacity: 1, scale: 1, transition: { duration: 1 } },
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { duration: 1 } },
   };
   const factVariants = {
     hidden: { opacity: 0 },
     visible: { opacity: 1, transition: { duration: 1 } },
   };
   return (
-    <main className="pt-[3rem] md:pt-[9rem] pb-[13rem] bg-[#dfe8ec]">
+    <main className="pt-[2rem] md:pt-[9rem] pb-[13rem] bg-[#dfe8ec]">
       <div className="">
         <motion.div initial="hidden" animate="visible" variants={variants}>
           <Image
@@ -36,7 +33,7 @@ const About = () => {
             alt="about"
             width={300}
             heght={300}
-            className="mx-auto w-full md:w-[30rem]"
+            className="mx-auto w-full md:w-[30rem] border-2 border-white"
             priority
           />
         </motion.div>
@@ -44,7 +41,7 @@ const About = () => {
           initial="hidden"
           animate="visible"
           variants={variants}
-          className="text-[2rem] lg:text-[2.3rem] md:text-center text-left mx-[2rem] font-semibold md:font-[500] mb-[1rem] md:mb-[2rem] mt-[2rem]"
+          className="text-[2rem] lg:text-[2.3rem] md:text-center text-left mx-[1rem] font-semibold md:font-[500] mb-[1rem] md:mb-[2rem] mt-[2rem]"
         >
           About Us <span className="animate-pulse">🌱</span>
         </motion.h1>
@@ -52,7 +49,7 @@ const About = () => {
           initial="hidden"
           animate="visible"
           variants={variants}
-          className="text-left mx-[2rem] mb-[1rem] md:text-[1.2rem] lg:text-[1.3rem] md:mx-auto md:w-[55%] leading-[1.9rem] md:leading-[2.5rem]"
+          className="text-left mx-[1rem] mb-[1rem] md:text-[1.2rem] lg:text-[1.3rem] md:mx-auto md:w-[55%] leading-[1.9rem] md:leading-[2.5rem]"
         >
           Welcome to Felsunny Technology, a leading technology solutions
           provider with a commitment to delivering solutions and services to
@@ -61,13 +58,15 @@ const About = () => {
           reliability in providing our clients with innovative and
           cost-effective solutions. <br /> <br /> We provide business solutions,
           including sales and distribution, government supplies, construction,
-          consultancy services, and property sales.
+          consultancy services, and property sales.So why wait? Contact us today
+          to learn more about how we can help you take your business to the next
+          level.
         </motion.p>
       </div>
       <motion.h1
-        ref={ref1}
+        ref={ref2}
         initial="hidden"
-        animate={inView1 ? "visible" : "hidden"}
+        animate={inView2 ? "visible" : "hidden"}
         variants={factVariants}
         className="text-[2rem] lg:text-[2.3rem] md:text-center text-left ml-[3rem] font-semibold md:font-[500] mb-[1rem] md:mb-[2rem] mt-[2rem]"
       >
@@ -142,7 +141,7 @@ const About = () => {
         animate={inView1 ? "visible" : "hidden"}
         variants={factVariants}
       >
-        <h1 className="text-[2rem] lg:text-[2.3rem] md:text-center text-left ml-[3rem] font-semibold md:font-[500] mb-[1rem] md:mb-[2rem] mt-[2rem]">
+        <h1 className="text-[2rem] lg:text-[2.3rem] md:text-center text-left ml-[2rem] font-semibold md:font-[500] mb-[1rem] md:mb-[2rem] mt-[2rem]">
           Founder
         </h1>
         <Image
@@ -153,10 +152,10 @@ const About = () => {
           className="mx-auto "
           priority
         />
-        <p className="text-[1rem] md:text-center text-left ml-[3rem] font-semibold mt-[0.5rem]">
+        <p className="text-[1rem] md:text-center text-left ml-[2rem] font-semibold mt-[0.5rem]">
           Ayeniko Felix Sunday
         </p>
-        <p className="text-[1rem] md:text-center text-left ml-[3rem] font-semibold mt-[0.5rem]">
+        <p className="text-[1rem] md:text-center text-left ml-[2rem] font-semibold mt-[0.5rem]">
           {" "}
           Founder and Cheif Executive Officer
         </p>
