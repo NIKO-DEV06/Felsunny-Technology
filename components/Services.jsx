@@ -26,7 +26,7 @@ const Services = () => {
             priority
           />
         </div>
-        <div className="mx-[1rem] md:mx-[5rem] md:mr-[5rem] md:flx md:justiy-between md:gap-2rem] md:mt[3rem] w-[40%]">
+        <div className="mx-[1rem] md:mx-[5rem] md:mr-[5rem] md:flx md:justiy-between md:gap-2rem] md:mt[3rem] md:w-[40%]">
           <div className="">
             <p className="uppercase mt-[2rem] mb-[0.5rem] tracking-wide text-[1.1rem] md:text-[1.4rem]">
               our service
