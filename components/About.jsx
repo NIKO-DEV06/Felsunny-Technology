@@ -33,7 +33,7 @@ const About = () => {
             alt="about"
             width={300}
             heght={300}
-            className="mx-auto w-full md:w-[30rem] border-2 border-white"
+            className="mx-auto w-full md:w-[30rem]"
             priority
           />
         </motion.div>

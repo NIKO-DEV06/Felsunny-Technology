@@ -14,7 +14,7 @@ const Services = () => {
   ];
 
   return (
-    <main className="pt-[3rem] md:pt-[9rem] pb-[13rem] bg-[#dfe8ec]">
+    <main className="pt-[4rem] md:pt-[9rem] pb-[13rem] bg-[#dfe8ec]">
       <div className="md:flex md:flex-row-reverse md:justify-between gap-[2rem]">
         <div className="md:grid place-items-center">
           <Image
@@ -22,7 +22,7 @@ const Services = () => {
             alt="services"
             width={300}
             heght={300}
-            className="mx-auto w-full md:w-auto h-[15rem] ens md:translate-x-[-5rem] lg:translate-x-[-7rem] xl:translate-x-[-10rem] lg:scale-[1.2] xl:scale-[1.4]"
+            className="mx-auto w-full md:w-auto h-[15rem] md:translate-x-[-5rem] lg:translate-x-[-7rem] xl:translate-x-[-10rem] lg:scale-[1.2] xl:scale-[1.4]"
             priority
           />
         </div>
