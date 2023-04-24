@@ -44,7 +44,7 @@ const Construction = () => {
         </h1>
         <div className="mx-[1.5rem] mt-[1rem] md:mr-[2.5rem] md:w-[25%]">
           <p className="text-sm">
-            Welcome to Felsunny's construction page! We take pride in our
+            Welcome to Felsunny&apos;s construction page! We take pride in our
             ability to deliver high-quality construction services that meet the
             needs of our clients. Our team of experienced professionals has the
             expertise to handle any project, from small renovations to
@@ -108,8 +108,8 @@ const Construction = () => {
               <h2 className="uppercase font-semibold ">Carefully Planned</h2>
               <p className="text-sm mr-[2rem] mt-[0.2rem]">
                 Our team carefully plans every project to ensure that we are
-                able to deliver results that exceed our clients' expectations,
-                both in terms of quality and efficiency.
+                able to deliver results that exceed our clients&apos;
+                expectations, both in terms of quality and efficiency.
               </p>
             </div>
           </div>
