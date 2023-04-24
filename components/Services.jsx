@@ -1,21 +1,40 @@
+"use client";
+
 import Image from "next/image";
+import Link from "next/link";
+import { motion } from "framer-motion";
 
 import services from "../images/services.jpg";
 import right from "../images/right.svg";
 
 const Services = () => {
   const servicesOffered = [
-    { title: "Sales & Ditribution" },
-    { title: "Government Supplies" },
-    { title: "Construction" },
-    { title: "Property Sales" },
-    { title: "Gadgets & Devices" },
-    { title: "Consultancy Services" },
+    { title: "Sales & Ditribution", url: "/services/sales" },
+    { title: "Government Supplies", url: "/services/supplies" },
+    { title: "Construction & Interior", url: "/services/construction" },
+    { title: "Property Sales", url: "/services/property" },
+    { title: "Gadgets & Devices", url: "/services/devices" },
+    { title: "Consultancy Services", url: "/services/consultancy" },
   ];
+
+  const variants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { duration: 1 } },
+  };
+
+  const servicesVariants = {
+    hidden: { opacity: 0, y: 100 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.7 } },
+  };
 
   return (
     <main className="pt-[4rem] md:pt-[9rem] pb-[13rem] bg-[#dfe8ec]">
-      <div className="md:flex md:flex-row-reverse md:justify-between gap-[2rem]">
+      <motion.div
+        initial="hidden"
+        animate="visible"
+        variants={variants}
+        className="md:flex md:flex-row-reverse md:justify-between gap-[2rem]"
+      >
         <div className="md:grid place-items-center">
           <Image
             src={services}
@@ -44,31 +63,39 @@ const Services = () => {
             </p>
           </div>
         </div>
-      </div>
-      <div>
-        {servicesOffered.map(({ title }) => (
-          <div
+      </motion.div>
+
+      <motion.div
+        initial="hidden"
+        animate="visible"
+        transition={{ staggerChildren: 0.3 }}
+      >
+        {servicesOffered.map(({ title, url }) => (
+          <motion.div
+            variants={servicesVariants}
             key={title}
-            className="flex flex-col gap-[0.7rem] mt-[1.5rem] md:mt-[3.5rem]"
+            className="flex flex-col gap-[0.7rem] mt-[1.5rem] md:mt-[3.5rem] group"
           >
-            <div className="flex justify-between mx-[1.5rem] md:mx-[5.5rem]">
-              <p className="text-[1.55rem] md:text-[2.2rem] md:font-[500]">
-                {title}
-              </p>
-              <div>
-                <Image
-                  src={right}
-                  alt="right"
-                  width={35}
-                  heght={35}
-                  className="rotate[-45deg] hover:rotate-[-45deg] duration-300 cursor-pointer md:scale-[1.3]"
-                />
+            <Link href={url}>
+              <div className="flex justify-between mx-[1.5rem] md:mx-[5.5rem] cursor-pointer">
+                <p className="text-[1.55rem] md:text-[2.2rem] md:font-[500] opacity-60 group-hover:opacity-100 group-hover:scale-[1.1] md:group-hover:scale-[1.2] duration-300 md:group-hover:translate-y-[-1rem] group-hover:translate-y-[-0.3rem] lg:group-hover:translate-x-[7rem]">
+                  {title}
+                </p>
+                <div>
+                  <Image
+                    src={right}
+                    alt="right"
+                    width={35}
+                    heght={35}
+                    className="group-hover:rotate-[-45deg] duration-300 cursor-pointer md:scale-[1.3]"
+                  />
+                </div>
               </div>
-            </div>
+            </Link>
             <hr className="border-black mx-[1.5rem] md:mx-[5.5rem]" />
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </main>
   );
 };

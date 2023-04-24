@@ -29,7 +29,7 @@ const services = [
   },
   {
     id: "s3",
-    title: " ---- Construction ----",
+    title: " ---- Construction & Interior ----",
     image: construction,
     desc: "Building your vision with quality craftsmanship and attention to detail.",
   },

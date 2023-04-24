@@ -34,7 +34,7 @@ const About = () => {
             width={300}
             heght={300}
             className="mx-auto w-full md:w-[30rem]"
-            priority
+            loading="lazy"
           />
         </motion.div>
         <motion.h1
