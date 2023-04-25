@@ -109,7 +109,9 @@ const Footer = () => {
                   className="hover:opacity-60 duration-300 hover:scale-[1.2]"
                 />
               </Link>
-              <Link href={"/"}>
+              <Link
+                href={"https://www.linkedin.com/in/ayeniko-felix-0a0a4337/"}
+              >
                 <Image
                   alt="linkedin"
                   src={linkedin}
@@ -118,7 +120,7 @@ const Footer = () => {
                   className="hover:opacity-60 duration-300 hover:scale-[1.2]"
                 />
               </Link>
-              <Link href={"/"}>
+              <Link href={"https://www.facebook.com/felsunny/"}>
                 <Image
                   alt="facebook"
                   src={facebook}
@@ -127,7 +129,9 @@ const Footer = () => {
                   className="hover:opacity-60 duration-300 hover:scale-[1.2]"
                 />
               </Link>
-              <Link href={"/"}>
+              <Link
+                href={"https://www.instagram.com/felsunnytechnology/?hl=en"}
+              >
                 <Image
                   alt="instagram"
                   src={instagram}
@@ -138,7 +142,7 @@ const Footer = () => {
               </Link>
             </div>
             <p className="text-center translate-y-[2rem] text-[0.9rem]">
-              © 2023 Felsunny Technology. All Rights Reserved
+              © 2023 Felsunny Technology LTD. All Rights Reserved
             </p>
           </div>
         </div>

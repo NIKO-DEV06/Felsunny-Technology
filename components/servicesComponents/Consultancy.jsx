@@ -31,6 +31,7 @@ const Consultancy = () => {
         initial={{ opacity: 0, x: 100 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5 }}
+        whileTap={{ scale: 0.8 }}
         className="bg-white dark:bg-darkBlue shadow-input-shadow w-[7rem] ml-5 cursor-pointer md:ml-[3.5rem] lg:ml-[5.5rem] xl:ml-[6.5rem] rounded-sm mb-[1rem]"
       >
         <Link href="/services">
@@ -143,7 +144,7 @@ const Consultancy = () => {
             width={250}
             height={250}
             alt="image1"
-            className="w-full h-[20rem] md:w-auto md:h-full object-cover md:ml-[2rem] "
+            className="w-full h-[20rem] md:w-[40rem] md:h-full object-cover md:ml-[2rem] "
             loading="lazy"
           />
         </motion.div>
@@ -160,7 +161,7 @@ const Consultancy = () => {
           <div className="flex flex-col gap-[1rem] mt-[1.5rem]">
             <div className="ml-[1.5rem]">
               <h2 className="uppercase font-semibold lg:text-[1.2rem]">
-                Experienced and Knowledgeable Team
+                Experienced Team
               </h2>
               <p className="text-sm lg:text-base mr-[2rem] mt-[0.2rem]">
                 Our team of consultants has years of experience and a deep

@@ -36,8 +36,8 @@ const HomeSection = () => {
         variants={heroVariants}
         className="lg:flex w-full gap-[10rem] xl:gap-[18rem]"
       >
-        <h1 className="text-[1.8rem] md:text-[2.5rem] lg:text-[3.2rem] lg:leading-[5rem] pt-[10rem] font-bold md:text-center text-left px-6 lg:text-left lg:w-[50%] lg:translate-y-[-2rem]">
-          Streamline your business operations with our services
+        <h1 className="uppercase text-[1.8rem] md:text-[2.5rem] lg:text-[2.5rem] xl:text-[3.5rem] leading-[3.5rem]  md:leading-[4rem] lg:leading-[5rem] xl:leading-[7rem] pt-[10rem] font-[800] md:text-center text-left px-6 lg:text-left lg:w-[60%] lg:translate-y-[-2rem]">
+          Streamline your business with our services
         </h1>
         <motion.div
           animate={{ y: [-10, 10] }}
@@ -52,7 +52,7 @@ const HomeSection = () => {
             alt="Home page SVG"
             width={250}
             height={250}
-            className="mx-auto lg:mx-0 mt-[1rem] lg:scale-[1.5] lg:translate-y-[95%]"
+            className="mx-auto lg:mx-0 mt-[1rem] lg:scale-[1.5] lg:translate-y-[95%] lg:translate-x-[-5rem]"
             priority
           />
         </motion.div>

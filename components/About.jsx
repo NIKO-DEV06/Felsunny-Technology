@@ -63,7 +63,7 @@ const About = () => {
           level.
         </motion.p>
       </div>
-      <motion.h1
+      {/* <motion.h1
         ref={ref2}
         initial="hidden"
         animate={inView2 ? "visible" : "hidden"}
@@ -71,8 +71,8 @@ const About = () => {
         className="text-[2rem] lg:text-[2.3rem] md:text-center text-left ml-[3rem] font-semibold md:font-[500] mb-[1rem] md:mb-[2rem] mt-[2rem]"
       >
         Numbers
-      </motion.h1>
-      <motion.div
+      </motion.h1> */}
+      {/* <motion.div
         ref={ref2}
         initial="hidden"
         animate={inView2 ? "visible" : "hidden"}
@@ -133,7 +133,7 @@ const About = () => {
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
           </p>
         </motion.div>
-      </motion.div>
+      </motion.div> */}
 
       <motion.div
         ref={ref1}

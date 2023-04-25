@@ -2,6 +2,7 @@
 
 import { Fragment } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
 
@@ -17,36 +18,42 @@ import arrow from "../images/arrowWhite.svg";
 const services = [
   {
     id: "s1",
+    url: "/services/sales",
     title: " ---- Sales & Distribution ----",
     image: dis,
     desc: "Boost Your Sales and Expand Your Reach with Our Efficient Distribution Solutions.",
   },
   {
     id: "s2",
+    url: "/services/supplies",
     title: " ---- Government Supplies ----",
     image: gs,
     desc: "Delivering quality products and services to meet the needs of our nation's leaders.",
   },
   {
     id: "s3",
+    url: "/services/construction",
     title: " ---- Construction & Interior ----",
     image: construction,
     desc: "Building your vision with quality craftsmanship and attention to detail.",
   },
   {
     id: "s4",
+    url: "/services/property",
     title: " ---- Property Sales ----",
     image: ps,
     desc: "Find your dream home with our comprehensive property listings and personalized service.",
   },
   {
     id: "s5",
+    url: "/services/devices",
     title: " ---- Gadgets & Devices ----",
     image: devices,
     desc: " Elevate your digital experience with our top-of-the-line devices and gadgets.",
   },
   {
     id: "s6",
+    url: "/services/consultancy",
     title: " ---- Consultancy Services ----",
     image: consult,
     desc: " Unlocking your company's potential with expert guidance and innovative solutions.",
@@ -112,36 +119,38 @@ const ServicesSection = () => {
               key={service.id}
               className="relative p-2 lg:p-0 rounded-[1rem]"
             >
-              <h1 className=" z-10 font-[500] text-[1.1rem] p-2 bg[#1e1e1e] rounded-md lg:text-[1.2rem] lg:font-[400]">
-                {service.title}
-              </h1>
+              <Link href={service.url}>
+                <h1 className=" z-10 font-[500] text-[1.1rem] p-2 bg[#1e1e1e] rounded-md lg:text-[1.2rem] lg:font-[400]">
+                  {service.title}
+                </h1>
 
-              <div className="relative group cursor-pointer">
-                <p className="absolute p-2 bg-[#1e1e1e] text-white rounded-md bottom-0 group-hover:bottom-[1rem] left-1/2 transform -translate-x-1/2 w-[90%] text-[0.91rem] z-40 duration-200 opacity-0 group-hover:opacity-100 xl:text-[1.1rem]">
-                  {service.desc}
-                </p>
-                <div className="absolute group-hover:opacity-[0.75] bg-[#223434] opacity-0 inset-0 z-30 rounded-[1rem] duration-200 "></div>
-                <p className="z-40 flex uppercase absolute left-1/2 transform -translate-x-1/2 top-[40%] text-[1.2rem] tracking-wider text-white opacity-0 group-hover:opacity-100 duration-200">
-                  see more{" "}
-                  <span className="">
-                    <Image
-                      alt="arrow"
-                      src={arrow}
-                      width={20}
-                      height={20}
-                      className="translate-y-1 "
-                    />
-                  </span>
-                </p>
+                <div className="relative group cursor-pointer">
+                  <p className="absolute p-2 bg-[#1e1e1e] text-white rounded-md bottom-0 group-hover:bottom-[1rem] left-1/2 transform -translate-x-1/2 w-[90%] text-[0.91rem] z-40 duration-200 opacity-0 group-hover:opacity-100 xl:text-[1.1rem]">
+                    {service.desc}
+                  </p>
+                  <div className="absolute group-hover:opacity-[0.75] bg-[#223434] opacity-0 inset-0 z-30 rounded-[1rem] duration-200 "></div>
+                  <p className="z-40 flex uppercase absolute left-1/2 transform -translate-x-1/2 top-[40%] text-[1.2rem] tracking-wider text-white opacity-0 group-hover:opacity-100 duration-200">
+                    see more{" "}
+                    <span className="">
+                      <Image
+                        alt="arrow"
+                        src={arrow}
+                        width={20}
+                        height={20}
+                        className="translate-y-1 "
+                      />
+                    </span>
+                  </p>
 
-                <Image
-                  alt={service.title}
-                  src={service.image}
-                  width={300}
-                  height={300}
-                  className="relative h-[17rem] lg:h-[20rem] lg:w-[25rem] xl:h-[23rem] xl:w-[28rem] rounded-[1rem] duration-200 shadow-input-shadow"
-                />
-              </div>
+                  <Image
+                    alt={service.title}
+                    src={service.image}
+                    width={300}
+                    height={300}
+                    className="relative h-[17rem] lg:h-[20rem] lg:w-[25rem] xl:h-[23rem] xl:w-[28rem] rounded-[1rem] duration-200 shadow-input-shadow"
+                  />
+                </div>
+              </Link>
             </motion.div>
           ))}
         </motion.div>
