@@ -95,8 +95,8 @@ const Consultancy = () => {
             transition={{ duration: 0.5 }}
             className="text-sm lg:text-base xl:text-lg"
           >
-            At Felsunny&apos;s Consulting Services, we've worked with clients in
-            a wide range of industries, from healthcare to finance to
+            At Felsunny&apos;s Consulting Services, we&apos;ve worked with
+            clients in a wide range of industries, from healthcare to finance to
             manufacturing. Our team has the experience and expertise to help
             businesses of all sizes and types succeed.
             <br />
