@@ -178,7 +178,7 @@ const PropertySales = () => {
                 Comprehensive Services
               </h2>
               <p className="text-sm mr-[2rem] mt-[0.2rem] lg:text-base ">
-                We offer a wide range of services to meet our clients' needs.
+                We offer a wide range of services to meet our clients needs.
                 From buying and selling to property management and investment
                 advice, we are a one-stop shop for all your real estate needs.
                 Our team of agents has the expertise and knowledge to guide you

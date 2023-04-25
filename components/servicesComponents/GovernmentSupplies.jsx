@@ -108,8 +108,8 @@ const GovernmentSupplies = () => {
             transition={{ duration: 0.5 }}
             className="text-sm lg:text-base xl:text-lg"
           >
-            Whether you're a government agency or a contractor working with the
-            government, Felsunny Government Supplies can help you get the
+            Whether you&apos;re a government agency or a contractor working with
+            the government, Felsunny Government Supplies can help you get the
             supplies you need to get the job done. Contact us today to learn
             more about how we can help your organization succeed.
           </motion.p>
@@ -177,10 +177,10 @@ const GovernmentSupplies = () => {
               </h2>
               <p className="text-sm mr-[2rem] mt-[0.2rem] lg:text-base ">
                 We understand that reliable delivery and logistics are critical
-                to the success of government operations, and that's why we offer
-                fast and efficient delivery services. Our team works with our
-                clients to ensure that their products are delivered on time and
-                in good condition, and we use the latest technology to track
+                to the success of government operations, and that&apos;s why we
+                offer fast and efficient delivery services. Our team works with
+                our clients to ensure that their products are delivered on time
+                and in good condition, and we use the latest technology to track
                 shipments and ensure that they arrive at their destinations
                 safely and securely.
               </p>
@@ -193,7 +193,7 @@ const GovernmentSupplies = () => {
                 We believe that excellent customer service is essential to
                 building lasting relationships with our clients. Our team of
                 customer service experts is available around the clock to answer
-                questions, provide support, and ensure that our clients' needs
+                questions, provide support, and ensure that our clients needs
                 are always met. We understand the importance of prompt and
                 effective communication, and we strive to provide our clients
                 with the support they need to succeed.

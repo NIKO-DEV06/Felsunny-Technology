@@ -172,7 +172,7 @@ const Devices = () => {
               </h2>
               <p className="text-sm lg:text-base mr-[2rem] mt-[0.2rem]">
                 We offer a wide range of electronics products to meet the needs
-                of our customers. Whether you're looking for the latest
+                of our customers. Whether you&apos;re looking for the latest
                 smartphones, tablets, laptops, or gaming consoles, we&apos;ve
                 got you covered.
               </p>
@@ -183,7 +183,7 @@ const Devices = () => {
               </h2>
               <p className="text-sm mr-[2rem] mt-[0.2rem] lg:text-base ">
                 We understand that price is an important consideration for our
-                customers. That's why we offer competitive prices on all our
+                customers. That&apos;s why we offer competitive prices on all our
                 products, so you can get the high-quality electronics you need
                 at an affordable price.
               </p>
@@ -197,7 +197,7 @@ const Devices = () => {
               <p className="text-sm mr-[2rem] mt-[0.2rem] lg:text-base ">
                 Our team of electronics experts is always available to answer
                 your questions and provide you with expert advice. Whether
-                you're looking for recommendations on the best products for your
+                you&apos;re looking for recommendations on the best products for your
                 needs or need help troubleshooting an issue, our team is here to
                 help.
               </p>
