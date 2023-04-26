@@ -12,9 +12,6 @@ const About = () => {
     threshold: 0.3,
     triggerOnce: true,
   });
-  const { ref: ref2, inView: inView2 } = useInView({
-    triggerOnce: true,
-  });
 
   const variants = {
     hidden: { opacity: 0 },
@@ -63,77 +60,6 @@ const About = () => {
           level.
         </motion.p>
       </div>
-      {/* <motion.h1
-        ref={ref2}
-        initial="hidden"
-        animate={inView2 ? "visible" : "hidden"}
-        variants={factVariants}
-        className="text-[2rem] lg:text-[2.3rem] md:text-center text-left ml-[3rem] font-semibold md:font-[500] mb-[1rem] md:mb-[2rem] mt-[2rem]"
-      >
-        Numbers
-      </motion.h1> */}
-      {/* <motion.div
-        ref={ref2}
-        initial="hidden"
-        animate={inView2 ? "visible" : "hidden"}
-        transition={{ staggerChildren: 0.3 }}
-        className="grid place-items-center gap-[1rem] mx-[2rem] md:grid-cols-2 lg:grid-cols-3 mt-[1rem]"
-      >
-        <motion.div
-          variants={factVariants}
-          className="grid place-items-center bg-white w-[20rem] h-[15rem] p-[1rem]"
-        >
-          <h1 className="text-[4rem] font-semibold">36</h1>
-          <p className="">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          </p>
-        </motion.div>
-        <motion.div
-          variants={factVariants}
-          className="grid place-items-center bg-white w-[20rem] h-[15rem] p-[1rem]"
-        >
-          <h1 className="text-[4rem] font-bold">36</h1>
-          <p className="">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          </p>
-        </motion.div>{" "}
-        <motion.div
-          variants={factVariants}
-          className="grid place-items-center bg-white w-[20rem] h-[15rem] p-[1rem]"
-        >
-          <h1 className="text-[4rem] font-bold">36</h1>
-          <p className="">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          </p>
-        </motion.div>{" "}
-        <motion.div
-          variants={factVariants}
-          className="grid place-items-center bg-white w-[20rem] h-[15rem] p-[1rem]"
-        >
-          <h1 className="text-[4rem] font-bold">36</h1>
-          <p className="">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          </p>
-        </motion.div>
-        <motion.div
-          variants={factVariants}
-          className="grid place-items-center bg-white w-[20rem] h-[15rem] p-[1rem]"
-        >
-          <h1 className="text-[4rem] font-bold">36</h1>
-          <p className="">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          </p>
-        </motion.div>
-        <motion.div
-          variants={factVariants}
-          className="grid place-items-center bg-white w-[20rem] h-[15rem] p-[1rem]"
-        >
-          <h1 className="text-[4rem] font-bold">36</h1>
-          <p className="">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          </p>
-        </motion.div>
-      </motion.div> */}
 
       <motion.div
         ref={ref1}

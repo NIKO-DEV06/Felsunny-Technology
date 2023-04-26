@@ -147,6 +147,7 @@ const ServicesSection = () => {
                     src={service.image}
                     width={300}
                     height={300}
+                    loading="lazy"
                     className="relative h-[17rem] lg:h-[20rem] lg:w-[25rem] xl:h-[23rem] xl:w-[28rem] rounded-[1rem] duration-200 shadow-input-shadow"
                   />
                 </div>

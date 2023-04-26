@@ -6,7 +6,6 @@ import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
 
 import businessSvg from "../images/business.svg";
-// import blob from "../images/blob.svg";
 
 const HomeSection = () => {
   const { ref: ref1, inView: inView1 } = useInView({
