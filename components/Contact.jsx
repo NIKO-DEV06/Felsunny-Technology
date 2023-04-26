@@ -1,24 +1,67 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import emailjs from "@emailjs/browser";
+import * as yup from "yup";
 
 import down from "../images/down.svg";
 import send from "../images/send.svg";
 
+const schema = yup.object().shape({
+  name: yup.string().trim().required("Name field is required"),
+  email: yup.string().email().required("Please enter a valid email address"),
+  message: yup.string().trim().required("Please enter a message"),
+});
+
 const Contact = () => {
+  const [isSending, setIsSending] = useState(false);
+
   const variants = {
     hidden: { opacity: 0, scale: 0.8 },
     visible: { opacity: 1, scale: 1, transition: { duration: 1 } },
   };
 
-  const submitFormHandler = (e) => {
-    e.preventDefault();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm({
+    resolver: yupResolver(schema),
+  });
+
+  const submitFormHandler = async (e) => {
+    setIsSending(true);
+    try {
+      const response = await emailjs.sendForm(
+        process.env.NEXT_SERVICE_ID,
+        process.env.NEXT_TEMPLATE_ID,
+        "#contact-form",
+        process.env.NEXT_KEY_ID
+      );
+
+      reset();
+      setIsSending(false);
+      console.log("sent successfully");
+    } catch (error) {
+      setIsSending(false);
+      console.log(error);
+    }
   };
+
+  console.log(process.env.NEXT_SERVICE_ID);
+  console.log(process.env.NEXT_TEMPLATE_ID);
+  console.log(process.env.NEXT_KEY_ID);
+
   return (
     <main className="pt-[7.5rem] pb-[7rem] bg-[#dfe8ec]">
       <form
-        onSubmit={submitFormHandler}
+        id="contact-form"
+        onSubmit={handleSubmit(submitFormHandler)}
         className="pt-[1.5rem] flex flex-col items-center justify-start"
       >
         <div className="flex flex-col gap-[1rem] lg:gap-[1.5rem]">
@@ -59,9 +102,13 @@ const Contact = () => {
                 placeholder="e.g. John Doe"
                 type="text"
                 name="name"
+                {...register("name")}
                 autoComplete="off"
                 className="inputs"
               />
+              <p className="text-[#ff0000] font-[500] text-sm text-left pt-1">
+                {errors.name?.message}
+              </p>
             </motion.div>
             <motion.div
               initial="hidden"
@@ -73,12 +120,16 @@ const Contact = () => {
                 Your Email
               </p>
               <input
+                {...register("email")}
                 placeholder="e.g. johndoe@gmail.com"
                 type="text"
                 name="email"
                 autoComplete="off"
                 className="inputs"
               />
+              <p className="text-[#ff0000] font-[500] text-sm text-left pt-1">
+                {errors.email?.message}
+              </p>
             </motion.div>
           </div>
           <div className="flex flex-col items-center md:items-start">
@@ -103,12 +154,16 @@ const Contact = () => {
                 name="services"
                 className="select cursor-pointer bg-white text-[0.95rem] lg:text-[1rem] font-[500] text-[#656161]"
               >
-                <option value="sales">Sales & Distribution</option>
-                <option value="supplies">Government Supplies</option>
-                <option value="construction">Construction</option>
-                <option value="property">Property Sales</option>
-                <option value="devices">Gadgets & Devices</option>
-                <option value="consultancy">Consultancy Services</option>
+                <option value="Sales-and-Distribution">
+                  Sales & Distribution
+                </option>
+                <option value="Government-Supplies">Government Supplies</option>
+                <option value="Construction">Construction</option>
+                <option value="Property-Sales">Property Sales</option>
+                <option value="Gadgets-Devices">Gadgets & Devices</option>
+                <option value="Consultancy-Services">
+                  Consultancy Services
+                </option>
               </select>
             </motion.div>
           </div>
@@ -124,12 +179,16 @@ const Contact = () => {
               </p>
               <textarea
                 name="message"
+                {...register("message")}
                 cols="30"
                 rows="10"
                 autoComplete="off"
                 placeholder="Let us know what your project is about"
                 className="outline-none border-[1px] focus:border-black h-[11rem] w-[21rem] md:w-[43rem] lg:w-[55rem] rounded-none appearance-none resize-none px-4 py-3 text-[0.95rem] lg:text-[1rem] "
               />
+              <p className="text-[#ff0000] font-[500] text-sm text-center">
+                {errors.message?.message}
+              </p>
             </motion.div>
           </div>
           <div className="flex flex-col items-center md:items-start">
