@@ -7,6 +7,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import emailjs from "@emailjs/browser";
 import * as yup from "yup";
+import toast, { Toaster } from "react-hot-toast";
 
 import down from "../images/down.svg";
 import send from "../images/send.svg";
@@ -34,7 +35,7 @@ const Contact = () => {
     resolver: yupResolver(schema),
   });
 
-  const submitFormHandler = async (e) => {
+  const submitFormHandler = async (data) => {
     setIsSending(true);
     try {
       const response = await emailjs.sendForm(
@@ -46,19 +47,16 @@ const Contact = () => {
 
       reset();
       setIsSending(false);
-      console.log("sent successfully");
+      toast.success("Message Sent!");
     } catch (error) {
       setIsSending(false);
-      console.log(error);
+      toast.error("Message failed to send");
     }
   };
 
-  console.log(process.env.NEXT_SERVICE_ID);
-  console.log(process.env.NEXT_TEMPLATE_ID);
-  console.log(process.env.NEXT_KEY_ID);
-
   return (
     <main className="pt-[7.5rem] pb-[7rem] bg-[#dfe8ec]">
+      <Toaster position="top-center" reverseOrder={false} />
       <form
         id="contact-form"
         onSubmit={handleSubmit(submitFormHandler)}
@@ -184,7 +182,8 @@ const Contact = () => {
                 rows="10"
                 autoComplete="off"
                 placeholder="Let us know what your project is about"
-                className="outline-none border-[1px] focus:border-black h-[11rem] w-[21rem] md:w-[43rem] lg:w-[55rem] rounded-none appearance-none resize-none px-4 py-3 text-[0.95rem] lg:text-[1rem] "
+                className={`outline-none border-[1px] focus:border-black 
+                 h-[11rem] w-[21rem] md:w-[43rem] lg:w-[55rem] rounded-none appearance-none resize-none px-4 py-3 text-[0.95rem] lg:text-[1rem]`}
               />
               <p className="text-[#ff0000] font-[500] text-sm text-center">
                 {errors.message?.message}
@@ -198,9 +197,12 @@ const Contact = () => {
               whileTap={{ scale: 0.9 }}
               transition={{ duration: 0 }}
               variants={variants}
-              className="group flex justify-center items-center gap-[0.5rem] bg-black text-white w-[21rem] lg:w-[27rem] p-[0.65rem] mt-[1rem] tracking-widest md:hover:bg-[#b3bdc2] md:hover:text-black duration-200 "
+              disabled={isSending}
+              className={`group flex justify-center items-center gap-[0.5rem] bg-black text-white w-[21rem] lg:w-[27rem] p-[0.65rem] mt-[1rem] tracking-widest md:hover:bg-[#b3bdc2] md:hover:text-black duration-200 ${
+                isSending ? "opacity-50" : ""
+              }`}
             >
-              SEND
+              {isSending ? "SENDING..." : "SEND"}
               <Image
                 src={send}
                 width={20}
