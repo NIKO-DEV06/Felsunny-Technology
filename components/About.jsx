@@ -23,17 +23,17 @@ const About = () => {
   };
   return (
     <main className="pt-[2rem] md:pt-[9rem] pb-[13rem] bg-[#dfe8ec]">
-      <div className="">
-        <motion.div initial="hidden" animate="visible" variants={variants}>
-          <Image
-            src={about}
-            alt="about"
-            width={300}
-            heght={300}
-            className="mx-auto w-full md:w-[30rem]"
-            loading="lazy"
-          />
-        </motion.div>
+      <motion.div initial="hidden" animate="visible" variants={variants}>
+        <Image
+          src={about}
+          alt="about"
+          width={300}
+          heght={300}
+          className="mx-auto w-full md:w-[30rem]"
+          loading="lazy"
+        />
+      </motion.div>
+      <div>
         <motion.h1
           initial="hidden"
           animate="visible"

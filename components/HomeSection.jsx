@@ -26,6 +26,37 @@ const HomeSection = () => {
     visible: { opacity: 1, x: 0, transition: { duration: 0.7 } },
   };
 
+  const letters = Array.from("Streamline your business with our services");
+
+  const container = {
+    hidden: { opacity: 0 },
+    visible: (i = 1) => ({
+      opacity: 1,
+      transition: { staggerChildren: 0.035, delayChildren: 0.04 * i },
+    }),
+  };
+
+  const child = {
+    visible: {
+      opacity: 1,
+
+      y: 0,
+      transition: {
+        type: "spring",
+        damping: 12,
+        stiffness: 100,
+      },
+    },
+    hidden: {
+      opacity: 0,
+      y: 25,
+      transition: {
+        type: "spring",
+        damping: 12,
+        stiffness: 100,
+      },
+    },
+  };
   return (
     <div className="">
       <motion.div
@@ -35,9 +66,19 @@ const HomeSection = () => {
         variants={heroVariants}
         className="lg:flex w-full gap-[10rem] xl:gap-[18rem]"
       >
-        <h1 className="uppercase text-[1.8rem] md:text-[2.5rem] lg:text-[2.5rem] xl:text-[3.5rem] leading-[3.5rem]  md:leading-[4rem] lg:leading-[5rem] xl:leading-[7rem] pt-[10rem] font-[800] md:text-center text-left px-6 lg:text-left lg:w-[60%] lg:translate-y-[-2rem]">
-          Streamline your business with our services
-        </h1>
+        <motion.h1
+          variants={container}
+          initial="hidden"
+          animate="visible"
+          className="uppercase text-[1.8rem] md:text-[2.5rem] lg:text-[2.5rem] xl:text-[3.5rem] leading-[3.5rem]  md:leading-[4rem] lg:leading-[5rem] xl:leading-[7rem] pt-[10rem] font-[800] md:font-[700] md:text-center text-left px-6 lg:text-left lg:w-[60%] lg:translate-y-[-2rem]"
+        >
+          {letters.map((letter, index) => (
+            <motion.span variants={child} key={index}>
+              {/* {letter === " " ? "\u00A0" : letter} */}
+              {letter}
+            </motion.span>
+          ))}
+        </motion.h1>
         <motion.div
           animate={{ y: [-10, 10] }}
           transition={{
